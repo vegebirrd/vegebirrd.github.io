@@ -12,7 +12,7 @@ When you fear the height.
 Around me, laughter, bonds ignite,  
 Confetti, roses, and the limelight.  
   
-A corner, that's where I belong,  
+A corner, that's where I  belong,  
 Silent still, I reach out, to feel that soundless song.  
 Heart dancing, like a lone bird of paradise,  
 Hands holding, drips of bone-chilling ice.  
