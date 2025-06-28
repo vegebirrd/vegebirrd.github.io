@@ -2,7 +2,7 @@
 title: "As Long As I Enjoy Solitude"
 last_modified_at: 2025-06-27T16:20:02-05:00
 categories:
-  - blog
+  - Poems
 tags:
   - Poems
 ---
