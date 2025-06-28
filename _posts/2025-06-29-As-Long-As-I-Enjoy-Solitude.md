@@ -1,6 +1,7 @@
 ---
 title: "As Long As I Enjoy Solitude"
 last_modified_at: 2025-06-29T16:20:02-05:00
+date: 2025-06-29
 categories:
   - blog
 tags:
