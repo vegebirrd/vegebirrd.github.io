@@ -19,7 +19,7 @@ A hazy Southern sky, soft sunlight, a contemplative figure on a quiet road. Ther
 ## 9. "Die Lit" – Playboi Carti (2018)  
 ![dl](/assets/images/album-covers/dl.jpg)  
 
-A frozen moment of chaos: bodies mid-air, limbs flailing, pure punk energy caught in grainy black-and-white. Die Lit looks like a staged mosh pit or a spontaneous riot—either way, it’s raw, immediate, and completely anti-slick. The cover doesn’t explain itself—it just jumps off the edge, and dares you to follow.  
+A frozen moment of chaos: bodies mid-air, limbs flailing, pure punk energy caught in grainy black-and-white. Die Lit looks like a staged mosh pit or a spontaneous riot — either way, it’s raw, immediate, and completely anti-slick. The cover doesn’t explain itself. It just jumps off the edge, and dares you to follow.  
 
 ## 8. "Yeezus" - Kanye West (2013)  
 ![yzs](/assets/images/album-covers/yzs.jpg)  
