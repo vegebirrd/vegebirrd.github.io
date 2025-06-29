@@ -62,6 +62,8 @@ It’s more than an album cover. It became a signal. In 2024, the *“brat green
 
 Explosions of color, scattered text, and something that feels like both data and dream. Designed by Stanley Donwood and Thom Yorke, the cover is abstract and alive — a visual echo of the album’s warmth and chaos. The repeated *IN_RAINBOWS* lettering, layered over glitchy fragments and fractured typography, mirrors the information overload of modern life. It’s anxious, recursive, almost digital in its urgency, yet it breathes like a painting. As with the music, clarity is never handed to you — it flickers in and out, between beauty and breakdown.  
 
+---
+
 # Honorable Mentions
 
 ## "Some Rap Songs" - Earl Sweatshirt (2018)  
@@ -94,9 +96,13 @@ Explosions of color, scattered text, and something that feels like both data and
 ## "We got it from Here… Thank You 4 Your service" – A Tribe Called Quest (2016)  
 ![wgifh](/assets/images/album-covers/wgifh.jpg)
 
+---
+
 Some album covers whisper. Others shout. The best ones don’t just accompany the music — they deepen it, distort it, or reframe how we hear it. In a time when streaming often strips music of its physical presence, the cover remains a stubbornly visual artifact: a first impression, a lasting image, a mood-board for what’s inside. Whether it’s the radioactive glare of *BRAT*, the baroque defiance of *JEFFERY*, or the layered abstraction of *In Rainbows*, these artworks stay with us long after the final track fades.  
   
 Of course, no list is definitive. For every album cover here, there are countless others that could’ve made the cut. So now it's your turn: what album cover has lived in your mind the longest?  
+
+---
 
 ## Vote for Your Favorite Album Cover
 
