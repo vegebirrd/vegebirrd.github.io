@@ -29,12 +29,12 @@ A clear CD case. A strip of red tape. That’s it. No more things. A minimalist 
 ## 7. "Hail to the Thief" - Radiohead (2003)  
 ![httt](/assets/images/album-covers/httt.jpg)  
 
-A mess of words stacked like buildings — “GOD,” “AID,” “TV,” “FEAR.” It’s not subtle, but it’s not supposed to be. It’s a paranoid map of modern life, and still one of their most underrated visuals.  
+A mess of words stacked like buildings — *“GOD,” “AID,” “TV,” “FEAR.”* It’s not subtle, but it’s not supposed to be. It’s a paranoid map of modern life, and still one of their most underrated visuals.  
   
 ## 6. "Melodrama" - Lorde (2017)  
 ![melo](/assets/images/album-covers/melo.jpg)  
 
-Painted in rich purples and electric blues, this portrait feels like peeking into someone’s dream. It’s sensual, melancholy, and dramatic—exactly like the music behind it.  
+Painted in rich purples and electric blues, this portrait feels like peeking into someone’s dream. It’s sensual, melancholy, and dramatic — exactly like the music behind it.  
   
 ## 5. "Ugly Season" - Perfume Genius (2022)  
 ![us](/assets/images/album-covers/us.jpg)  
@@ -55,12 +55,12 @@ Young Thug stands tall in a ruffled lavender gown, face partially obscured, post
 ![brat](/assets/images/album-covers/brat.jpg)  
 
 Green so bright it stings your eyes. Nothing but a name, a font, and a wall of color. It doesn’t ask to be liked — it demands attention. Loud, minimal, and instantly iconic.  
-It’s more than an album cover. It became a signal. In 2024, the “brat green” spread like wildfire: avatars turned neon, timelines pulsed with that radioactive shade. It wasn’t about being pretty. It was about showing up loud, shameless, and unfiltered. A color turned into a mood, a meme, a movement.
+It’s more than an album cover. It became a signal. In 2024, the *“brat green”* spread like wildfire: avatars turned neon, timelines pulsed with that radioactive shade. It wasn’t about being pretty. It was about showing up loud, shameless, and unfiltered. A color turned into a mood, a meme, a movement.
 
 ## 1. "In Rainbows" - Radiohead (2007)  
 ![ir](/assets/images/album-covers/ir.jpg)　　
 
-Explosions of color, scattered text, and something that feels like both data and dream. Designed by Stanley Donwood and Thom Yorke, the cover is abstract and alive — a visual echo of the album’s warmth and chaos. The repeated IN_RAINBOWS lettering, layered over glitchy fragments and fractured typography, mirrors the information overload of modern life. It’s anxious, recursive, almost digital in its urgency, yet it breathes like a painting. As with the music, clarity is never handed to you — it flickers in and out, between beauty and breakdown.  
+Explosions of color, scattered text, and something that feels like both data and dream. Designed by Stanley Donwood and Thom Yorke, the cover is abstract and alive — a visual echo of the album’s warmth and chaos. The repeated *IN_RAINBOWS* lettering, layered over glitchy fragments and fractured typography, mirrors the information overload of modern life. It’s anxious, recursive, almost digital in its urgency, yet it breathes like a painting. As with the music, clarity is never handed to you — it flickers in and out, between beauty and breakdown.  
 
 # Honorable Mentions
 
