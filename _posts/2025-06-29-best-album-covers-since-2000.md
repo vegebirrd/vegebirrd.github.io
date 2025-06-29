@@ -1,11 +1,12 @@
 ---
 title: "The Best 10 Album Covers Since 2000"
-last_modified_at: 2024-09-20T16:20:02-05:00
+last_modified_at: 2025-06-29T16:20:02-05:00
 categories:
   - Reviews
 tags:
   - Albums
   - Review
+  - Vote
 ---
 
 What makes an album cover truly great? It might be the aesthetic clarity — the colors, the form, the visual punch. Or the way it reflects a deeper cultural moment, a political undertone, a personal mythology. Sometimes, it simply resonates with the music itself — echoing its mood, expanding its meaning, offering a counterpoint or a mirror. The best covers aren’t just packaging, they’re part of the whole story.  
