@@ -97,3 +97,32 @@ Explosions of color, scattered text, and something that feels like both data and
 Some album covers whisper. Others shout. The best ones don’t just accompany the music — they deepen it, distort it, or reframe how we hear it. In a time when streaming often strips music of its physical presence, the cover remains a stubbornly visual artifact: a first impression, a lasting image, a mood-board for what’s inside. Whether it’s the radioactive glare of *BRAT*, the baroque defiance of *JEFFERY*, or the layered abstraction of *In Rainbows*, these artworks stay with us long after the final track fades.  
   
 Of course, no list is definitive. For every album cover here, there are countless others that could’ve made the cut. So now it's your turn: what album cover has lived in your mind the longest?  
+
+## Vote for Your Favorite Album Cover
+
+<form name="album-cover-vote" method="POST" data-netlify="true">
+  <p><strong>Which album cover speaks to you the most?</strong></p>
+
+  <label><input type="radio" name="cover" value="Saint Cloud – Waxahatchee"> Saint Cloud – Waxahatchee</label><br>
+  <label><input type="radio" name="cover" value="Die Lit – Playboi Carti"> Die Lit – Playboi Carti</label><br>
+  <label><input type="radio" name="cover" value="Yeezus – Kanye West"> Yeezus – Kanye West</label><br>
+  <label><input type="radio" name="cover" value="Hail to the Thief – Radiohead"> Hail to the Thief – Radiohead</label><br>
+  <label><input type="radio" name="cover" value="Melodrama – Lorde"> Melodrama – Lorde</label><br>
+  <label><input type="radio" name="cover" value="Ugly Season – Perfume Genius"> Ugly Season – Perfume Genius</label><br>
+  <label><input type="radio" name="cover" value="The Idler Wheel – Fiona Apple"> The Idler Wheel – Fiona Apple</label><br>
+  <label><input type="radio" name="cover" value="JEFFERY – Young Thug"> JEFFERY – Young Thug</label><br>
+  <label><input type="radio" name="cover" value="BRAT – Charli xcx"> BRAT – Charli xcx</label><br>
+  <label><input type="radio" name="cover" value="In Rainbows – Radiohead"> In Rainbows – Radiohead</label><br>
+  <label><input type="radio" name="cover" value="Some Rap Songs – Earl Sweatshirt"> Some Rap Songs – Earl Sweatshirt</label><br>
+  <label><input type="radio" name="cover" value="MAGDALENE – FKA Twigs"> MAGDALENE – FKA Twigs</label><br>
+  <label><input type="radio" name="cover" value="To Pimp a Butterfly – Kendrick Lamar"> To Pimp a Butterfly – Kendrick Lamar</label><br>
+  <label><input type="radio" name="cover" value="SOS – SZA"> SOS – SZA</label><br>
+  <label><input type="radio" name="cover" value="The Life Of Pablo – Kanye West"> The Life Of Pablo – Kanye West</label><br>
+  <label><input type="radio" name="cover" value="OIL OF EVERY PEARL’S UN-INSIDES – SOPHIE"> OIL OF EVERY PEARL’S UN-INSIDES – SOPHIE</label><br>
+  <label><input type="radio" name="cover" value="Cold Visions – Bladee"> Cold Visions – Bladee</label><br>
+  <label><input type="radio" name="cover" value="Art Angels – Grimes"> Art Angels – Grimes</label><br>
+  <label><input type="radio" name="cover" value="Titanic Rising – Weyes Blood"> Titanic Rising – Weyes Blood</label><br>
+  <label><input type="radio" name="cover" value="We got it from Here… Thank You 4 Your service – A Tribe Called Quest"> We got it from Here… Thank You 4 Your service – A Tribe Called Quest</label><br><br>
+
+  <button type="submit">Submit Vote</button>
+</form>
