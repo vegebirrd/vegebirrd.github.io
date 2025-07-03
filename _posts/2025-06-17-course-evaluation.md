@@ -60,7 +60,7 @@ Lab难度很大，洞主参考了[A神的网站][Arth]，还花了比较多时�
 
 ## 算法设计与分析 蒋婷婷/jtt
 【课程推荐度】：5/10  
-由于算分即将改革成3学分的课程，故测评意义不是特别大。
+由于算分即将改革成3学分的课程，故测评意义不是特别大。  
 [算分资料][sfzl]   
 
 # 国发专业课
@@ -160,6 +160,22 @@ tape portfolio：期末老师要求每个学生提交在学期中练习的十个
 【课程教材】：北京大学出版社的初级日语第二册  
 【评价】：超好的语言课，老师们都很认真负责，而且特别有心，在结课的时候给每个学生送了小礼物🎁😭。同学之间互相讨论问题的氛围也很好。洞主在这个课上收获了很多，特别是日语听力，在老师带着我们进行训练以及洞主自己课后拿着材料苦练的过程中有了明显提升，从一开始完全跟不上节奏到学期末可以基本听明白，感动。下半年的N4试验我来了，希望不要散步西马修。  
 【洞主得分】：100  
+
+<script src="https://giscus.app/client.js"
+        data-repo="vegebirrd/blog-comments"
+        data-repo-id="R_kgDOPGH2Rg"
+        data-category="General"
+        data-category-id="DIC_kwDOPGH2Rs4Csafo"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
 
 [Arth]:https://arthals.ink
 [cs]:https://disk.pku.edu.cn/link/AA17403A52A6A84757B205DBB25ADB8873
