@@ -1,6 +1,6 @@
 ---
 title: "大二课程测评及资料开源"
-last_modified_at: 2025-06-28T16:20:02-05:00
+last_modified_at: 2025-07-02T16:20:02-05:00
 categories:
   - Course Evaluation
 tags:
