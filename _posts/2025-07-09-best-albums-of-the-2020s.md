@@ -103,7 +103,7 @@ Genre: Art Rock / Experimental Rock / Singer-Songwriter
 Genre: Indie Folk / Singer-Songwriter  
 ![javelin](/assets/images/album-covers/jav.jpg)  
 
-## 2. *Luminescent Creatures* - Ichiko Aoba (2025)  
+## 2. *Luminescent Creatures* - 青葉市子 (2025)  
 Genre: Ambient Folk  
 ![luminescent-creatures](/assets/images/album-covers/lc.jpg)  
 
