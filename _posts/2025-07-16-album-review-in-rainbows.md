@@ -9,8 +9,8 @@ tags:
 ---
 
 ![ir](/assets/images/album-covers/ir.jpg)
-## Genre: Art Rock / Alternative Rock  
-## Rating: 10/10  
+### Genre: Art Rock / Alternative Rock
+### Rating: 10/10  
 Have you ever seen the rainbows after a storm? They are fragile, fleeting, yet bursting with color. Just like Radiohead's seventh studio album, *In Rainbows*, which glows with emotion, intimacy, and a dazzling spectrum of feelings.  
 From the Britpop peak of *The Bends*, to the alternative electronic textures of *OK Computer*, and then to the radical, experimental left-turn of *Kid A* - probably one of the most groundbreaking moves in 21st-century's music industry — fans eagerly awaited Radiohead's next move, curious to see what bold new direction they would take. And yet, with *In Rainbows*, they returned to something **profoundly human**. Drawing on all their prior explorations, they wove together **electronic, classical, grunge, and more** into arrangements that felt more mature, more cohesive, and richer than ever. It may well be Radiohead’s greatest musical achievement — and perhaps even one of the greatest albums ever made.  
 The album kicks off with a track called *"15 Step"*, a quirky song in 5/4 time, propelled by jittery, fragmented beats from an electronic drum machine. *"How come I end up where I started?"* Thom sings — but actually, this is no mere return to the beginning for Radiohead; it’s a dazzling comeback, carrying with it everything they've discovered along the way. They are climbing a spiral staircase — returning, yet always rising.  
