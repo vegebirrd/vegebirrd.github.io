@@ -9,10 +9,12 @@ tags:
 ---
 
 
-<video width="640" controls loop muted>
+<video width="800" controls loop>
   <source src="/assets/videos/Velvet Bite (I Like It).mp4" type="video/mp4">
 </video>
    
+---
+
 # Lyrics
 
 ---

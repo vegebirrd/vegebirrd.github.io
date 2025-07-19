@@ -9,10 +9,11 @@ tags:
 ---
 
 
-<video width="640" controls loop muted>
+<video width="800" controls loop>
   <source src="/assets/videos/博雅塔.mp4" type="video/mp4">
 </video>
   
+---
 
 <script src="https://giscus.app/client.js"
         data-repo="vegebirrd/blog-comments"
