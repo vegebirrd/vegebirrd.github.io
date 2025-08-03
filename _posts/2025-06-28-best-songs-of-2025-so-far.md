@@ -32,7 +32,7 @@ tags:
 ## "Dudu" - yeule
 ![egiag](/assets/images/album-covers/dudu.jpg)
 
-## "Time Like These" - Addison Rae
+## "Times Like These" - Addison Rae
 ![ad](/assets/images/album-covers/addison.jpg)
 
 ## "Hammer" - Lorde
@@ -46,3 +46,15 @@ tags:
 
 ## "Abracadabra" – Lady Gaga  
 ![ab](/assets/images/album-covers/mayhem.jpg)
+
+## "Elderberry Wine" – Wednesday  
+![ew](/assets/images/album-covers/ew.jpg)
+
+## "Wound Up Here (By Holdin On)" – Wednesday  
+![wuh](/assets/images/album-covers/wuh.jpg)
+
+## "Pick Up That Knife" – Wednesday  
+![putn](/assets/images/album-covers/putn.jpg)
+
+## "The Subway" – Chappell Roan  
+![ts](/assets/images/album-covers/ts.jpg)
