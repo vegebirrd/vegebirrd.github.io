@@ -11,7 +11,7 @@ tags:
 ![mc](/assets/images/album-covers/mc.jpg)
 ### Rating: 6.5/10  
   
-I love Sabrina Carpenter's sweet, breathy vocals. I love her lyrics when they're clever, cheeky, and just the right amount of horny. But her new single *"Manchild"* feels oddly muted — like a B-side from *"Short n' Sweet"* that somehow wandered into her new era. It's light and self-aware, with lyrics that flirt with twisted humor, sure, but lacks the punch or sparkle we've come to expect. The wit is there, but the fire isn't.  
+I love Sabrina Carpenter's sweet vocals. I love her lyrics when they're clever, cheeky, ironic, and just the right amount of horny. But her new single *"Manchild"* feels oddly muted — like a B-side from *"Short n' Sweet"* that somehow wandered into her new era. It's light and self-aware, with lyrics that flirt with twisted humor, sure, but lacks the punch or sparkle we've come to expect. The wit is there, but the fire isn't.  
 And girl, seriously — who approved that album cover of your upcoming studio album? Blink twice if you need help.
 
 
