@@ -56,16 +56,16 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Tori Yasai"
+  name   : "Krysdal C. Warhol"
   avatar : "/assets/images/eating-vegetable.jpg"
   bio    : "I am an angler married to the sea."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://vegebirrd.github.io"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "WeChat"
+      icon: "fab fa-fw fa-weixin"
+      url: "/assets/images/Wechat.jpg" 
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/vegebirrd"

@@ -3,7 +3,7 @@ permalink: /about/
 title: "About"
 ---
 
-Welcome to **Tori Yasai**’s personal website.
+Welcome to **Krysdal C. Warhol**’s personal website.
 
 This is a quiet corner on the web where I:  
 - Share everyday thoughts and moments from campus life

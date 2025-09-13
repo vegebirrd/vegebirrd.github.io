@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Life Recordings"
 permalink: /life/
 author_profile: true
