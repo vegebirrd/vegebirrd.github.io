@@ -4,6 +4,8 @@ title: "Life Recordings"
 permalink: /life/
 ---
 
+## My Life
+
 <div class="photo-wall">
   <img src="/assets/images/life/1.jpg" alt="Meal">
   <img src="/assets/images/life/2.jpg" alt="Meal">
