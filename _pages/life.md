@@ -46,8 +46,8 @@ author_profile: true
     <a href="/assets/images/life/5.jpg" data-lightbox="life" data-title="Trip 3">
     <img src="/assets/images/life/5.jpg" alt="Trip 3">
   </a>
-    <a href="/assets/images/life/5.jpg" data-lightbox="life" data-title="Trip 4">
-    <img src="/assets/images/life/5.jpg" alt="Trip 4">
+    <a href="/assets/images/life/6.jpg" data-lightbox="life" data-title="Trip 4">
+    <img src="/assets/images/life/6.jpg" alt="Trip 4">
   </a>
 </div>
 
