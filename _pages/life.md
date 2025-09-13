@@ -2,13 +2,18 @@
 layout: page
 title: "Life Recordings"
 permalink: /life/
+author_profile: true
 ---
 
 ## My Life
 
 <div class="photo-wall">
-  <img src="/assets/images/life/1.jpg" alt="Meal">
-  <img src="/assets/images/life/2.jpg" alt="Meal">
+  <a href="/assets/images/life/1.jpg" data-lightbox="life" data-title="Meal 1">
+    <img src="/assets/images/life/1.jpg" alt="Meal 1">
+  </a>
+  <a href="/assets/images/life/2.jpg" data-lightbox="life" data-title="Meal 2">
+    <img src="/assets/images/life/2.jpg" alt="Meal 2">
+  </a>
 </div>
 
 <style>
@@ -28,3 +33,4 @@ permalink: /life/
   transform: scale(1.05);
 }
 </style>
+
