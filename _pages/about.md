@@ -12,7 +12,7 @@ This is a quiet corner on the web where I:
 
 ## About Me
 
-Hi, I’m **Tori Yasai** — a sophomore at **Peking University**, majoring in **Computer Science** and **Economics**.  
+Hi, I’m **Tori Yasai** — a junior at **Peking University**, majoring in **Computer Science** and **Economics**.  
 This site is where I drop class notes, daily rambles, and the occasional music review no one asked for but I wrote anyway.  
 Thanks for stopping by — have fun exploring!
 
