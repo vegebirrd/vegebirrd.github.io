@@ -75,9 +75,9 @@ author:
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "WeChat"
+      icon: "fab fa-fw fa-weixin"
+      url: "/assets/images/Wechat.jpg" 
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/vegebirrd"
