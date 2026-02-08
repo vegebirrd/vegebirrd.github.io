@@ -72,6 +72,9 @@ author:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/idiupax/"
+    - label: "Resume"
+      icon: "fas fa-fw fa-file"
+      url: "/assets/resume.pdf"
 
 footer:
   links:
