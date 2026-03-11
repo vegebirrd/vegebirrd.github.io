@@ -95,7 +95,8 @@ Lab难度很大，洞主参考了[A神的网站][Arth]，还花了比较多时�
 教考非常结合，考察的内容基本上都是上课讲过的。  
 【评价】：胡局讲课清楚明白，经常举一些例子或是做一些类比帮助我们理解（胡局的类比实在是非常高明），偶尔也会讲一些课程相关的段子，使教室内充满着快活的空气。唯一的遗憾是胡局不提供回放，复习的时候只能对着课件看。  
 【洞主得分】：90-94  
-[博弈论带旁注的课件][byl]  
+[博弈论课件/往年题][byl]  
+[24秋博弈论作业及解答][bylzy]  
   
 ## 国际贸易 黄清扬/hqy
 【课程推荐度】：8.9/10  
@@ -195,6 +196,7 @@ tape portfolio：期末老师要求每个学生提交在学期中练习的十个
 [zhwnt]:https://disk.pku.edu.cn/link/AA92D5364DF57541D5816F2F3EE8C8276D
 [zhsjt]:https://disk.pku.edu.cn/link/AAF23D332707F2444B9F5D95153C2CA069
 [byl]:https://disk.pku.edu.cn/link/AA264C3D7102494D78A999EF894034F049
+[bylzy]:https://disk.pku.edu.cn/link/AAA72FB47CA52B4DAC8B0F60CD597463E3
 [xgzl]:https://disk.pku.edu.cn/link/AAB20AD5DD5E9747C881EF0ED5922A9A64
 [cwkj]:https://disk.pku.edu.cn/link/AAA8BAA352C30C4B58A162C8E4C24A8F4E
 [kjfl]:https://disk.pku.edu.cn/link/AA1E3441EAA8064404BBE89A23F0B8FA27
