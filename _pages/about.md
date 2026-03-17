@@ -37,5 +37,15 @@ I like campy outfits that sparkle a little too much and dramatic eyeshadow that 
 - Investment Research  
 - Macroeconomics  
 
+## About My Desert Island Albums
+- In Rainbows  
+- OK Computer  
+- Kid A  
+- Saint Cloud  
+- The Low End Theory  
+- Neon Bible  
+- Luminescent Creatures  
+- Hounds of Love  
+
 ## About My Friends
 - [Marshall Wang](https://yxwang1215.github.io/), a junior at Xidian University, majoring in **Software Engineering**.
