@@ -12,13 +12,9 @@ This is a quiet corner on the web where I:
 
 ## About Me
 
-Hi, I’m **Krysdal C. Warhol** — a junior at **Peking University**, majoring in **Computer Science** and **Economics**. I also go by the nickname **Tori Yasai**.  
+Hi, I’m **Krysdal C. Warhol** — a junior at **Peking University**, majoring in **Computer Science** and **Economics**.  
 This site is where I drop class notes, daily rambles, and the occasional music review no one asked for but I wrote anyway.  
 Thanks for stopping by — have fun exploring!
-
-## About My Nickname
-
-*Tori* means *bird* in Japanese (and, incidentally, is also a fairly common English name), while *Yasai* means *vegetable*. Together, they quite literally spell out *rookie* in Chinese — a playful way to describe myself as a beginner not just in academic fields, but, honestly, in most things in life. After all, I’m still flapping my wings and growing my leaves, trying to figure things out one awkward step at a time.
 
 ## About Thinks I Like
 
@@ -34,12 +30,12 @@ I like campy outfits that sparkle a little too much and dramatic eyeshadow that 
 ## About Skills I'm Currently Developing 
 - Spanish  
 - Japanese  
-- Photography  
-- Makeup  
+- Photography   
 
 ## About My Research Interests
-- Embodied AI 
-- Macroeconomics
+- Embodied AI  
+- Investment Research  
+- Macroeconomics  
 
 ## About My Friends
 - [Marshall Wang](https://yxwang1215.github.io/), a junior at Xidian University, majoring in **Software Engineering**.
