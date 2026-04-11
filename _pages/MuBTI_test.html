@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>MuBTI · Music Behavior Type Indicator</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: #f3f0f7;
+            background-image: radial-gradient(circle at 20% 30%, rgba(220, 200, 240, 0.3) 0%, rgba(240, 235, 250, 0.6) 80%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .card {
+            max-width: 880px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 40px;
+            padding: 32px 30px;
+            box-shadow: 0 20px 40px -10px rgba(30, 20, 40, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: box-shadow 0.3s ease;
+        }
+        .card:hover {
+            box-shadow: 0 24px 48px -12px rgba(50, 30, 70, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+        }
+        /* 欢迎页 */
+        .welcome-panel {
+            text-align: center;
+            padding: 20px 0 10px;
+        }
+        .welcome-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #4a2e62 0%, #7c5f9a 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 12px;
+        }
+        .welcome-sub {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3f3252;
+            margin-bottom: 32px;
+        }
+        .welcome-icon {
+            font-size: 3.8rem;
+            margin: 20px 0 30px;
+            color: #6a4e8a;
+            opacity: 0.7;
+        }
+        .start-btn {
+            background: #5e3f77;
+            color: white;
+            border: none;
+            padding: 18px 48px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 15px 25px -8px #5a4080;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .start-btn i { transition: transform 0.2s; }
+        .start-btn:hover {
+            background: #73549a;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -8px #6a4790;
+        }
+        .start-btn:hover i { transform: translateX(5px); }
+        .help-btn {
+            background: rgba(255, 255, 255, 0.6);
+            color: #5e3f77;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 12px 24px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 10px 20px -8px #5a4080;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .help-btn i { transition: transform 0.2s; }
+        .help-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px -8px #6a4790;
+        }
+        .help-btn:hover i { transform: scale(1.1); }
+        .feature-list {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 40px;
+            color: #4d3c61;
+            font-weight: 500;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            background: rgba(255,255,255,0.3);
+            padding: 6px 16px;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+        }
+        /* 测试页头部 */
+        .header { margin-bottom: 20px; text-align: center; }
+        .header h1 {
+            font-size: 2.6rem; font-weight: 650; letter-spacing: -0.02em;
+            color: #1e1729;
+        }
+        .part-badge {
+            background: rgba(100, 70, 130, 0.1);
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #5e3f77;
+            display: inline-block;
+            margin-top: 6px;
+            border: 1px solid rgba(120, 90, 150, 0.2);
+        }
+        .progress-area { margin-bottom: 26px; }
+        .progress-track {
+            height: 8px; background: rgba(200, 180, 220, 0.3);
+            border-radius: 20px; overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+        }
+        .progress-fill {
+            height: 100%; width: 0%; background: linear-gradient(90deg, #7a5e91, #9f7acb);
+            border-radius: 20px; transition: width 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+            box-shadow: 0 0 8px #b392d9;
+        }
+        .progress-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-weight: 500;
+            color: #4d3c61;
+            font-size: 0.9rem;
+        }
+        .counter { text-align: right; }
+        .question-panel {
+            background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px); border-radius: 32px;
+            padding: 28px 26px; margin-bottom: 24px;
+            border: 1px solid rgba(255,255,255,0.8);
+            box-shadow: 0 8px 18px -6px rgba(70, 50, 90, 0.06);
+        }
+        .q-text {
+            font-size: 1.8rem; font-weight: 600; line-height: 1.3;
+            color: #1f1a28; margin-bottom: 28px; letter-spacing: -0.02em;
+        }
+        .options { display: flex; flex-direction: column; gap: 14px; }
+        .opt {
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px); border-radius: 60px;
+            padding: 16px 24px; border: 1.5px solid rgba(255, 255, 255, 0.9);
+            font-weight: 500; font-size: 1.1rem; color: #1e1629;
+            display: flex; align-items: center; gap: 18px; cursor: pointer;
+            transition: all 0.2s ease; box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+        }
+        .opt i { font-size: 1.3rem; width: 28px; color: #7a5e91; opacity: 0.8; transition: transform 0.2s; }
+        .opt:hover { background: white; border-color: #cbb5e2; box-shadow: 0 10px 20px -8px rgba(80, 60, 110, 0.15); }
+        .opt:hover i { transform: scale(1.05); color: #5a3f77; }
+        .opt.selected { background: #ede3fc; border-color: #9f7acb; box-shadow: 0 5px 12px rgba(110, 70, 150, 0.12); }
+        .opt.selected i { color: #6a4790; }
+        .nav { display: flex; gap: 16px; }
+        .btn {
+            background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.8);
+            padding: 16px 18px; border-radius: 60px; font-weight: 600; font-size: 1.1rem;
+            color: #30263e; box-shadow: 0 5px 10px rgba(0,0,0,0.02);
+            cursor: pointer; transition: all 0.2s; flex: 1; text-align: center;
+        }
+        .btn i { transition: transform 0.2s; }
+        .btn:hover:not(:disabled) { background: white; box-shadow: 0 10px 20px -5px rgba(60, 40, 90, 0.1); }
+        .btn:hover:not(:disabled) i { transform: translateX(3px); }
+        .btn-primary { background: #5e3f77; color: white; border: none; box-shadow: 0 12px 20px -8px #5a4080; }
+        .btn-primary:hover { background: #73549a; transform: translateY(-2px); }
+        .btn:disabled { opacity: 0.35; pointer-events: none; }
+        .result-panel { text-align: center; }
+        .artist-avatar {
+            font-size: 4.5rem; background: rgba(255,255,255,0.5); width: 120px; height: 120px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px; border: 3px solid white;
+            box-shadow: 0 12px 20px -5px rgba(60, 40, 80, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .artist-avatar:hover { transform: scale(1.02); }
+        .artist-name { font-size: 2.8rem; font-weight: 700; letter-spacing: -0.02em; color: #1c1427; }
+        .match-rate {
+            background: rgba(105, 75, 140, 0.12); backdrop-filter: blur(4px);
+            padding: 6px 20px; border-radius: 40px; display: inline-block;
+            font-weight: 600; color: #3a2952; margin: 12px 0 18px;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+        .artist-bio {
+            font-size: 1.2rem; margin: 10px 0 8px; color: #2f273a;
+            font-weight: 450; padding: 0 10px; line-height: 1.5;
+        }
+        .quote { font-style: italic; color: #534468; margin: 20px 0 16px; }
+        .restart-btn {
+            background: white; border: none; padding: 16px 32px; border-radius: 60px;
+            font-weight: 600; font-size: 1.1rem; color: #3f2e56;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.03); cursor: pointer;
+            border: 1px solid #ddd0ea; margin-top: 12px;
+            transition: all 0.2s;
+        }
+        .restart-btn:hover { background: #f3ebfc; box-shadow: 0 10px 20px -5px rgba(90, 60, 130, 0.1); }
+        .hidden { display: none !important; }
+        .footnote { margin-top: 18px; color: #7c6b92; font-size: 0.8rem; }
+        .wave-icon { animation: subtlePulse 3s infinite; }
+        @keyframes subtlePulse {
+            0% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.03); }
+            100% { opacity: 0.8; transform: scale(1); }
+        }
+        @media (max-width: 550px) {
+            .card { padding: 24px 16px; }
+            .q-text { font-size: 1.4rem; }
+            .opt { padding: 14px 18px; font-size: 1rem; }
+            .artist-name { font-size: 2.2rem; }
+            .welcome-title { font-size: 3.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <!-- 欢迎页 -->
+    <div id="welcomeSection" class="welcome-panel">
+        <div class="welcome-title">MuBTI</div>
+        <div class="welcome-sub">Music Behavior Type Indicator</div>
+        <div class="welcome-icon">
+            <i class="fas fa-waveform"></i>
+        </div>
+        <button class="help-btn" id="helpBtn">
+            <i class="fas fa-question-circle"></i> Help
+        </button>
+        <button class="start-btn" id="startTestBtn">
+            Begin Test <i class="fas fa-arrow-right"></i>
+        </button>
+        <div class="feature-list">
+            <span class="feature-item"><i class="fas fa-music"></i> 20 questions</span>
+            <span class="feature-item"><i class="fas fa-user"></i> 16 artists</span>
+        </div>
+        <div class="footnote" style="margin-top: 30px;">Discover which western artist mirrors your inner world</div>
+    </div>
+
+    <!-- 测试区域 -->
+    <div id="quizSection" class="hidden">
+        <div class="header">
+            <h1>MuBTI</h1>
+            <div class="part-badge" id="partLabel">Part 1 · Daily Vibe</div>
+        </div>
+        <div class="progress-area">
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+            <div class="progress-stats">
+                <span></span>
+                <span class="counter" id="counterText">1 / 20</span>
+            </div>
+        </div>
+        <div id="questionPanel" class="question-panel"></div>
+        <div class="nav">
+            <button class="btn" id="prevBtn" disabled><i class="fas fa-chevron-left"></i> Prev</button>
+            <button class="btn btn-primary" id="nextBtn">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- 结果区域 -->
+    <div id="resultSection" class="result-panel hidden">
+        <div style="margin-bottom: 20px;"><i class="fas fa-waveform wave-icon" style="color:#7c5f9a; font-size:2rem;"></i></div>
+        <div class="artist-avatar" id="artistEmoji">🎤</div>
+        <div class="artist-name" id="artistName">Taylor Swift</div>
+        <div class="match-rate" id="matchPercent">92% match</div>
+        <div class="artist-bio" id="artistDesc">You are a master storyteller, turning heartbreak into poetry.</div>
+        <div class="quote" id="artistQuote">“I had the time of my life fighting dragons with you”</div>
+        <button class="restart-btn" id="restartBtn"><i class="fas fa-arrow-rotate-left"></i> Retake Test</button>
+        <div class="footnote">— 20 questions · 16 artists · MuBTI framework —</div>
+    </div>
+</div>
+
+<script>
+    (function(){
+        "use strict";
+
+        // ---------- 20 Questions ----------
+        const questions = [
+            // Part 1: Daily Vibe (1-7)
+            { text: "It's Friday night. What's the move?",
+              options: [
+                  { text: "Hit a dive bar with a live band, sweat it out", icon: "🎸", weights: { energy:4, pop:2, hiphop:1 } },
+                  { text: "Stay in, light a candle, spin a record front to back", icon: "🕯️", weights: { introspective:4, folk:2, alternative:2 } },
+                  { text: "Pregame with the crew, chaos ensues", icon: "🥂", weights: { pop:3, fun:4, hiphop:2 } },
+                  { text: "Journal or work on something creative alone", icon: "✍️", weights: { poetic:4, indie:3, introspective:2 } }
+              ] },
+            { text: "You're driving with the windows down. What's blasting?",
+              options: [
+                  { text: "Top 40 bangers, no skips", icon: "🚗", weights: { pop:4, energy:3, fun:2 } },
+                  { text: "That indie folk playlist you gatekeep", icon: "🌲", weights: { folk:4, indie:3, introspective:2 } },
+                  { text: "Hard rap — bass so loud the car shakes", icon: "🔊", weights: { hiphop:5, confident:3, energy:2 } },
+                  { text: "Something theatrical, maybe a musical soundtrack", icon: "🎭", weights: { dramatic:4, vocalpower:3, cinematic:2 } }
+              ] },
+            { text: "Your go-to coffee order?",
+              options: [
+                  { text: "Black, no fuss", icon: "☕", weights: { introspective:3, indie:2, honest:2 } },
+                  { text: "Oat milk latte with a dash of cinnamon", icon: "🥛", weights: { folk:3, poetic:2, indie:2 } },
+                  { text: "Whatever's trending on TikTok", icon: "📱", weights: { pop:4, fun:3, hiphop:2 } },
+                  { text: "An iced matcha, you're that person", icon: "🍵", weights: { alternative:3, ethereal:2, witty:2 } }
+              ] },
+            { text: "How do you unwind after a long day?",
+              options: [
+                  { text: "Pour a glass of wine and journal", icon: "🍷", weights: { poetic:3, introspective:3, indie:2 } },
+                  { text: "Hit the gym or go for a run", icon: "🏃", weights: { energy:4, confident:3, pop:2 } },
+                  { text: "Scroll memes until I fall asleep", icon: "📱", weights: { fun:4, witty:3, hiphop:2 } },
+                  { text: "Call a friend and spill the tea", icon: "💬", weights: { pop:3, storytelling:3, fun:2 } }
+              ] },
+            { text: "Your aesthetic on a chill Sunday?",
+              options: [
+                  { text: "Oversized sweater, vinyl playing, rainy window", icon: "🍂", weights: { folk:4, indie:3, introspective:2 } },
+                  { text: "Brunch with mimosas, outfit on point", icon: "🥂", weights: { pop:4, fun:3, confident:2 } },
+                  { text: "Sweats, gaming, ordering takeout", icon: "🎮", weights: { fun:3, hiphop:2, witty:2 } },
+                  { text: "Thrifting and wandering around alone", icon: "🛍️", weights: { alternative:3, indie:3, introspective:2 } }
+              ] },
+            { text: "How do you handle a disagreement?",
+              options: [
+                  { text: "Write a scathing note in my Notes app", icon: "📝", weights: { witty:3, angsty:3, poetic:2 } },
+                  { text: "Address it head-on, I don't do passive", icon: "⚡", weights: { confident:4, honest:3, hiphop:1 } },
+                  { text: "Internalize it and overthink for days", icon: "🧘", weights: { introspective:4, indie:2, alternative:2 } },
+                  { text: "Cry a little then dance it off", icon: "💃", weights: { pop:3, emotional:3, fun:2 } }
+              ] },
+            { text: "Pick a Saturday afternoon activity:",
+              options: [
+                  { text: "Hiking or a long walk with a podcast", icon: "🥾", weights: { folk:3, introspective:3, indie:2 } },
+                  { text: "Shopping spree at the mall", icon: "🛍️", weights: { pop:4, fun:3, confident:2 } },
+                  { text: "Day party / rooftop hangs", icon: "☀️", weights: { fun:4, energy:3, hiphop:2 } },
+                  { text: "Museum or indie movie theater", icon: "🎨", weights: { alternative:4, poetic:3, ethereal:2 } }
+              ] },
+
+            // Part 2: Lyrics & Musicianship (8-14)
+            { text: "A lyric that lives rent-free in your head:",
+              options: [
+                  { text: "\"I'm the problem, it's me\"", icon: "🪞", weights: { pop:3, selfaware:4, witty:2 } },
+                  { text: "\"I'm a creep, I'm a weirdo\"", icon: "🌑", weights: { alternative:4, introspective:4, poetic:2 } },
+                  { text: "\"I like it when you call me big poppa\"", icon: "💎", weights: { hiphop:4, confident:3, fun:2 } },
+                  { text: "\"God, it's brutal out here\"", icon: "💥", weights: { angsty:4, rock:2, pop:2, honest:3 } }
+              ] },
+            { text: "What makes a song a 10/10 for you?",
+              options: [
+                  { text: "Lyrics that feel ripped from my diary", icon: "📓", weights: { storytelling:4, poetic:3, honest:3 } },
+                  { text: "A beat that physically makes me move", icon: "🕺", weights: { fun:4, energy:3, hiphop:2 } },
+                  { text: "Immaculate production & atmosphere", icon: "🌌", weights: { alternative:4, experimental:3, ethereal:2 } },
+                  { text: "Vocal runs that give me chills", icon: "🎤", weights: { vocalpower:5, dramatic:2, pop:2 } }
+              ] },
+            { text: "Which production style hits different?",
+              options: [
+                  { text: "Acoustic guitar and raw, imperfect vocals", icon: "🎸", weights: { folk:4, indie:3, storytelling:2 } },
+                  { text: "808s, slick hi-hats, heavy bass", icon: "🥁", weights: { hiphop:5, confident:3, pop:1 } },
+                  { text: "Cinematic strings that swell like a movie", icon: "🎻", weights: { cinematic:4, dramatic:3, vocalpower:2 } },
+                  { text: "Glitchy, left-field, genre-bending", icon: "🎛️", weights: { alternative:4, experimental:3, indie:2 } }
+              ] },
+            { text: "On stage, you'd probably be:",
+              options: [
+                  { text: "Nervous but earnest, just me and my guitar", icon: "🎤", weights: { introspective:3, folk:3, storytelling:2 } },
+                  { text: "Full choreo, lights, the whole spectacle", icon: "💃", weights: { pop:4, confident:3, energy:3 } },
+                  { text: "Hyping the crowd, ad-libs on ten", icon: "🔥", weights: { hiphop:4, energy:3, confident:2 } },
+                  { text: "Weird art kid energy, maybe some interpretive dance", icon: "🌀", weights: { alternative:4, experimental:3, dramatic:2 } }
+              ] },
+            { text: "A song that never fails to make you emotional:",
+              options: [
+                  { text: "Stripped piano ballad about loss", icon: "🎹", weights: { vocalpower:3, emotional:4, introspective:2 } },
+                  { text: "Nostalgic folk tune about hometowns", icon: "🌾", weights: { folk:4, poetic:3, storytelling:2 } },
+                  { text: "Power anthem about overcoming odds", icon: "💪", weights: { dramatic:3, vocalpower:3, pop:2 } },
+                  { text: "Raw rap verse about real struggles", icon: "🎙️", weights: { hiphop:3, honest:4, introspective:2 } }
+              ] },
+            { text: "Who would you most want to collaborate with?",
+              options: [
+                  { text: "Bon Iver in a cabin in Wisconsin", icon: "🏔️", weights: { folk:5, indie:3, introspective:2 } },
+                  { text: "Max Martin in a pop sweatbox", icon: "🎛️", weights: { pop:5, fun:3, energy:2 } },
+                  { text: "Metro Boomin at 3am", icon: "🌙", weights: { hiphop:5, confident:3, energy:2 } },
+                  { text: "Björk in a volcano in Iceland", icon: "🇮🇸", weights: { alternative:5, experimental:4, ethereal:3 } }
+              ] },
+            { text: "What's more important in a music video?",
+              options: [
+                  { text: "A narrative that sticks with me", icon: "📖", weights: { storytelling:4, poetic:3, indie:2 } },
+                  { text: "Visuals that are just *chef's kiss*", icon: "✨", weights: { pop:4, cinematic:3, ethereal:2 } },
+                  { text: "Choreo that I'll learn on TikTok", icon: "🕺", weights: { fun:4, energy:3, pop:2 } },
+                  { text: "Something weird I don't fully get", icon: "🌀", weights: { alternative:4, experimental:3, ethereal:2 } }
+              ] },
+
+            // Part 3: Deeper Persona (15-20)
+            { text: "Your emotional default mode is probably:",
+              options: [
+                  { text: "Melancholic but make it hopeful", icon: "🌧️", weights: { introspective:3, poetic:3, indie:2 } },
+                  { text: "Confident main character energy", icon: "👑", weights: { confident:4, hiphop:2, pop:2 } },
+                  { text: "Witty and a little sarcastic", icon: "🎭", weights: { witty:4, pop:2, angsty:2 } },
+                  { text: "Hopeless romantic yearning", icon: "💌", weights: { romantic:4, vocalpower:2, cinematic:2 } }
+              ] },
+            { text: "What's your sense of humor like?",
+              options: [
+                  { text: "Dry, self-deprecating, a little dark", icon: "😐", weights: { witty:4, introspective:2, indie:2 } },
+                  { text: "Playful, sometimes raunchy", icon: "😏", weights: { fun:4, horny:4, hiphop:2 } },
+                  { text: "Big, dramatic, over-the-top", icon: "🎭", weights: { dramatic:4, pop:2, cinematic:2 } },
+                  { text: "Ironic meme references only", icon: "🐸", weights: { alternative:3, witty:3, pop:2 } }
+              ] },
+            { text: "Which word best describes you?",
+              options: [
+                  { text: "Introspective", icon: "🔮", weights: { introspective:5, poetic:2, indie:2 } },
+                  { text: "Charismatic", icon: "✨", weights: { pop:3, confident:3, fun:2 } },
+                  { text: "Rebellious", icon: "⚡", weights: { alternative:3, hiphop:2, angsty:3 } },
+                  { text: "Romantic", icon: "🌹", weights: { romantic:4, vocalpower:2, cinematic:2 } }
+              ] },
+            { text: "How do you discover new artists?",
+              options: [
+                  { text: "Algorithm got me in a chokehold", icon: "📱", weights: { pop:4, fun:3, hiphop:2 } },
+                  { text: "Friend puts me on (I trust them)", icon: "💬", weights: { indie:3, folk:2, storytelling:2 } },
+                  { text: "Digging through Bandcamp / crate digging", icon: "💿", weights: { alternative:4, introspective:3, experimental:3 } },
+                  { text: "Live shows & open mics", icon: "🎤", weights: { energy:3, folk:2, honest:2 } }
+              ] },
+            { text: "Your relationship with nostalgia?",
+              options: [
+                  { text: "I live there — older the song the better", icon: "📻", weights: { cinematic:4, poetic:3, folk:3 } },
+                  { text: "I appreciate it but I'm present", icon: "⏳", weights: { pop:3, indie:2, honest:2 } },
+                  { text: "Nostalgia is a prison, I want the future", icon: "🚀", weights: { hiphop:3, experimental:3, confident:2 } },
+                  { text: "I romanticize eras I never lived", icon: "🌆", weights: { ethereal:4, introspective:3, alternative:3 } }
+              ] },
+            { text: "Pick a motto to live by:",
+              options: [
+                  { text: "\"Tell the truth, even if your voice shakes\"", icon: "🗣️", weights: { honest:5, poetic:3, indie:2 } },
+                  { text: "\"Work hard, play harder, shine brighter\"", icon: "💫", weights: { pop:4, confident:4, energy:3 } },
+                  { text: "\"Fuck the system, trust your gut\"", icon: "🖕", weights: { hiphop:4, alternative:4, angsty:3 } },
+                  { text: "\"Create your own world and live in it\"", icon: "🌍", weights: { ethereal:5, introspective:3, alternative:3 } }
+              ] }
+        ];
+
+        // ---------- 16 Artists ----------
+        const artists = [
+            { name: "Taylor Swift", emoji: "🪩", desc: "You're a diaristic storyteller who turns personal lore into universal anthems. Witty, self‑aware, and fiercely protective of your narrative.",
+              quote: "“I had the time of my life fighting dragons with you.”",
+              traits: { pop:5, storytelling:5, witty:4, selfaware:4 } },
+            { name: "Björk", emoji: "🦢", desc: "You are avant-garde and deeply emotional, transforming raw nature and technology into otherworldly soundscapes. Uncompromising, visionary, and forever curious.",
+              quote: "“I'm a fountain of blood in the shape of a girl.”",
+              traits: { alternative:5, experimental:5, ethereal:5, poetic:4 } },
+            { name: "Beyoncé", emoji: "🐝", desc: "You are a force — disciplined, confident, and unapologetically in control. You lead with vision and demand excellence.",
+              quote: "“Okay, ladies, now let's get in formation, cause I slay.”",
+              traits: { confident:5, energy:5, pop:4, vocalpower:4 } },
+            { name: "Lana Del Rey", emoji: "🌹", desc: "You live in a hazy, cinematic dream. Nostalgic, romantic, and a little tragic — your aesthetic is a faded Polaroid.",
+              quote: "“You write, I tour, we make it work. You're beautiful and I'm insane. We're American-made.”",
+              traits: { cinematic:5, poetic:4, ethereal:4, introspective:3 } },
+            { name: "Billie Eilish", emoji: "🕷️", desc: "You're the quiet storm — introspective, genre‑bending, and unafraid to whisper uncomfortable truths.",
+              quote: "“I'm the bad guy... duh.”",
+              traits: { alternative:5, introspective:4, ethereal:3, angsty:3 } },
+            { name: "Sufjan Stevens", emoji: "🕊️", desc: "You find beauty in fragility and spirituality. Your inner world is intricate, gentle, and endlessly curious.",
+              quote: "“Amethyst and flowers on the table. Is it real or a fable?”",
+              traits: { folk:5, introspective:5, indie:5, poetic:5 } },
+            { name: "Thom Yorke", emoji: "🌀", desc: "Anxious, cerebral, and brilliantly unconventional. You see the fractures in the system and turn them into art.",
+              quote: "“I'm not here, this isn't happening.”",
+              traits: { alternative:5, experimental:5, introspective:4, ethereal:3 } },
+            { name: "Harry Styles", emoji: "🍉", desc: "Effortlessly charming, with a touch of retro mystique. You spread warmth and embrace fluidity.",
+              quote: "“Treat people with kindness.”",
+              traits: { pop:4, fun:4, energy:3, indie:2 } },
+            { name: "Lorde", emoji: "🌙", desc: "You're an observer, slightly detached, crafting minimal yet profound commentary on youth and fame.",
+              quote: "“I'm waiting for it, that green light, I want it.”",
+              traits: { poetic:4, alternative:4, introspective:3, witty:3 } },
+            { name: "Mitski", emoji: "🥀", desc: "You channel longing and desire into raw, elegant indie rock. Your sadness is your superpower.",
+              quote: "“Nothing in the world belongs to me. But my love, mine, all mine.”",
+              traits: { indie:5, introspective:4, poetic:4, angsty:3 } },
+            { name: "Laufey", emoji: "🎻", desc: "You blend classical elegance with modern intimacy — a hopeless romantic who finds beauty in the small, quiet moments. Your world is a sepia-toned jazz club.",
+              quote: "“But don't you feel it, too? Confess I loved you from the start.”",
+              traits: { folk:5, romantic:5, introspective:4, poetic:4 } },
+            { name: "CupcakKe", emoji: "🧁", desc: "Bold, unapologetically sexual, and hilarious. You say what others won't, and you make it sound like a banger.",
+              quote: "“My cakes got fatter by using cum as the batter.”",
+              traits: { hiphop:5, horny:5, fun:4, confident:3 } },
+            { name: "Sabrina Carpenter", emoji: "💋", desc: "Witty, polished pop with a wink. You're the clever one who delivers punchlines wrapped in a catchy hook.",
+              quote: "“I'm working late, 'cause I'm a singer.”",
+              traits: { pop:4, witty:4, fun:3, storytelling:2 } },
+            { name: "Olivia Rodrigo", emoji: "💜", desc: "You bleed teenage angst and raw honesty. Every emotion is a potential bridge or chorus.",
+              quote: "“God, it's brutal out here.”",
+              traits: { angsty:5, pop:4, honest:4, rock:2 } },
+            { name: "Doja Cat", emoji: "🐱", desc: "Chameleonic, playful, and chronically online. You mix rap, pop, and chaos with undeniable charisma.",
+              quote: "“I'd let you had I known it, why don't you say so?”",
+              traits: { hiphop:4, pop:3, fun:5, witty:3 } },
+            { name: "SZA", emoji: "🌊", desc: "Vulnerable, ethereal, and effortlessly cool. You float between R&B and introspection, making insecurity sound divine.",
+              quote: "“When no one's around me, you lost and found me. I was surrounded, with open, open, open, open arms.”",
+              traits: { alternative:4, introspective:4, ethereal:3, honest:3 } }
+        ];
+
+        // ---------- State ----------
+        let currentIndex = 0;
+        let answers = new Array(questions.length).fill(null);
+        const welcomeSection = document.getElementById('welcomeSection');
+        const quizSection = document.getElementById('quizSection');
+        const resultSection = document.getElementById('resultSection');
+        const questionPanel = document.getElementById('questionPanel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressFill = document.getElementById('progressFill');
+        const counterText = document.getElementById('counterText');
+        const partLabel = document.getElementById('partLabel');
+        const restartBtn = document.getElementById('restartBtn');
+        const startBtn = document.getElementById('startTestBtn');
+        const helpBtn = document.getElementById('helpBtn');
+
+        // 更新Part标签
+        function updatePartLabel(index) {
+            if (index < 7) partLabel.innerText = 'Part 1 · Daily Vibe';
+            else if (index < 14) partLabel.innerText = 'Part 2 · Lyrics & Musicianship';
+            else partLabel.innerText = 'Part 3 · Deeper Persona';
+        }
+
+        function renderQuestion(index) {
+            const q = questions[index];
+            const selected = answers[index];
+            let html = `<div class="q-text">${q.text}</div><div class="options">`;
+            q.options.forEach((opt, optIdx) => {
+                const selectedClass = (selected === optIdx) ? 'selected' : '';
+                html += `<div class="opt ${selectedClass}" data-opt-index="${optIdx}"><i class="fas fa-circle"></i><span>${opt.icon} ${opt.text}</span></div>`;
+            });
+            html += `</div>`;
+            questionPanel.innerHTML = html;
+            document.querySelectorAll('.opt').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const optIdx = parseInt(btn.dataset.optIndex);
+                    selectOption(index, optIdx);
+                });
+            });
+            updateProgressAndNav(index);
+            updatePartLabel(index);
+        }
+
+        function selectOption(qIdx, optIdx) {
+            answers[qIdx] = optIdx;
+            renderQuestion(qIdx);
+        }
+
+        function updateProgressAndNav(index) {
+            const progress = ((index + 1) / questions.length) * 100;
+            progressFill.style.width = progress + '%';
+            counterText.innerText = `${index+1} / ${questions.length}`;
+            prevBtn.disabled = (index === 0);
+            const allAnswered = answers.every(a => a !== null);
+            if (index === questions.length - 1) {
+                nextBtn.innerHTML = `See Result <i class="fas fa-magic"></i>`;
+                nextBtn.disabled = !allAnswered;
+            } else {
+                nextBtn.innerHTML = `Next <i class="fas fa-chevron-right"></i>`;
+                nextBtn.disabled = (answers[index] === null);
+            }
+        }
+
+        function goPrev() {
+            if (currentIndex > 0) { currentIndex--; renderQuestion(currentIndex); }
+        }
+        function goNext() {
+            if (currentIndex < questions.length - 1) {
+                if (answers[currentIndex] !== null) { currentIndex++; renderQuestion(currentIndex); }
+            } else {
+                if (answers.every(a => a !== null)) showResult();
+            }
+        }
+
+        function calculateMatch() {
+            const traitScores = {};
+            questions.forEach((q, idx) => {
+                const selected = answers[idx];
+                if (selected === null) return;
+                const weights = q.options[selected].weights;
+                for (let [trait, val] of Object.entries(weights)) {
+                    traitScores[trait] = (traitScores[trait] || 0) + val;
+                }
+            });
+            const artistScores = artists.map(artist => {
+                let score = 0;
+                for (let [trait, weight] of Object.entries(artist.traits)) {
+                    if (traitScores[trait]) score += traitScores[trait] * weight;
+                }
+                return { artist, score };
+            });
+            artistScores.sort((a, b) => b.score - a.score);
+            return artistScores;
+        }
+
+        function showResult() {
+            const ranked = calculateMatch();
+            const top = ranked[0].artist;
+            // 动态百分比：基于最高可能分数估算，并映射到55%~99%之间，避免过低
+            const maxPossible = artists.reduce((max, art) => {
+                let maxScore = 0;
+                for (let [trait, w] of Object.entries(art.traits)) maxScore += w * 100;
+                return Math.max(max, maxScore);
+            }, 0);
+            let rawPercent = (ranked[0].score / maxPossible) * 100;
+            // 将百分比映射到 55% ~ 99% 区间，让结果更合理
+            const minDisplay = 55, maxDisplay = 99;
+            const displayPercent = Math.round(minDisplay + (rawPercent / 100) * (maxDisplay - minDisplay));
+            const finalPercent = Math.min(maxDisplay, Math.max(minDisplay, displayPercent));
+            
+            document.getElementById('artistEmoji').innerText = top.emoji;
+            document.getElementById('artistName').innerText = top.name;
+            document.getElementById('matchPercent').innerText = `${finalPercent}% match`;
+            document.getElementById('artistDesc').innerText = top.desc;
+            document.getElementById('artistQuote').innerHTML = `“${top.quote}”`;
+            quizSection.classList.add('hidden');
+            resultSection.classList.remove('hidden');
+        }
+
+        function restart() {
+            currentIndex = 0;
+            answers = new Array(questions.length).fill(null);
+            resultSection.classList.add('hidden');
+            welcomeSection.classList.remove('hidden');
+            quizSection.classList.add('hidden');
+        }
+
+        function showHelp() {
+            alert("MuBTI (Music Behavior Type Indicator) is a personality quiz that matches you with artists based on your music preferences and behaviors.\n\nThis survey consists of 20 questions divided into 3 parts:\n- Part 1: Daily Vibe\n- Part 2: Lyrics & Musicianship\n- Part 3: Deeper Persona\n\nAnswer honestly to get the most accurate match. There are no right or wrong answers!");
+        }
+
+        function startQuiz() {
+            welcomeSection.classList.add('hidden');
+            quizSection.classList.remove('hidden');
+            currentIndex = 0;
+            answers = new Array(questions.length).fill(null);
+            renderQuestion(0);
+        }
+
+        prevBtn.addEventListener('click', goPrev);
+        nextBtn.addEventListener('click', goNext);
+        restartBtn.addEventListener('click', restart);
+        startBtn.addEventListener('click', startQuiz);
+        helpBtn.addEventListener('click', showHelp);
+    })();
+</script>
+</body>
+</html>
