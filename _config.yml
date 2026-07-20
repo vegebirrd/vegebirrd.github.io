@@ -56,7 +56,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Krysdal C. Warhol"
+  name   : "Krysdal Evangelista"
   avatar : "/assets/images/eating-vegetable.jpg"
   bio    : "I am an angler married to the sea."
   links:
