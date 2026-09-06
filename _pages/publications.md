@@ -5,9 +5,6 @@ author_profile: true
 ---
 
 <div class="pub-page">
-  <header class="pub-header">
-    <h1>Publications</h1>
-  </header>
 
   <div class="pub-list">
 
