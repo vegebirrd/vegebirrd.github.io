@@ -9,5 +9,7 @@ main:
     url: /about/
   - title: "Life"
     url: /life/
+  - title: "Publications"
+    url: /publications/
   - title: "MuBTI Test"
     url: /MuBTI_test.html
