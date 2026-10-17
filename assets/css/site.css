@@ -121,7 +121,7 @@ img{display:block;max-width:100%}
 /* Internal pages: no left rail */
 .page-shell{padding-top:68px;padding-bottom:105px}
 .page-intro{border-bottom:1px solid var(--rule);padding-bottom:29px;margin-bottom:28px}
-.page-intro h1{font:650 clamp(49px,5.5vw,70px)/1.05 var(--sans);letter-spacing:-.056em;margin:14px 0 9px}
+.page-intro h1{font:650 clamp(43px,4.8vw,60px)/1.05 var(--sans);letter-spacing:-.056em;margin:14px 0 9px}
 .page-intro h1 em{font-weight:400}.page-intro>p:last-child{color:#7b867b;margin:0;font-size:13px;max-width:690px}
 .page-intro a{text-decoration:underline;text-underline-offset:4px}
 .pub-summary,.archive-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;color:#858f85;font-size:10px;font-weight:750;letter-spacing:.09em;margin:0 0 14px}
@@ -150,9 +150,9 @@ img{display:block;max-width:100%}
 .logo-fallback{display:none}.cv-logo--fallback{background:#fbfaf6}.cv-logo--fallback .logo-fallback{display:block;color:#8b1a22;font-size:13px;font-weight:850;letter-spacing:.02em}
 .cv-logo--company.cv-logo--fallback .logo-fallback{color:var(--ink);font-size:10px;letter-spacing:.07em}
 .cv-entry__details{min-width:0}.cv-entry__line{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:3px 20px}
-.cv-entry__line strong{font-weight:740;font-size:15px}.cv-entry__line time,.cv-award time{color:#8a968b;font-size:11px;white-space:nowrap}
-.cv-entry__details p{font-size:12px;color:#6d7c70;margin:3px 0 0}.cv-dot{color:#aeb6ad}
-.cv-awards{display:grid;gap:13px;padding-top:3px}.cv-award{display:flex;justify-content:space-between;gap:15px 20px;font-size:13px}.cv-award span{font-weight:580}
+.cv-entry__line strong{font-weight:740;font-size:16px}.cv-entry__line time,.cv-award time{color:#8a968b;font-size:12px;white-space:nowrap}
+.cv-entry__details p{font-size:14px;color:#6d7c70;margin:3px 0 0}.cv-dot{color:#aeb6ad}
+.cv-awards{display:grid;gap:13px;padding-top:3px}.cv-award{display:flex;justify-content:space-between;gap:15px 20px;font-size:14px}.cv-award span{font-weight:580}
 .about-extras{border-top:1px solid var(--rule);padding-top:24px}.about-extras h2{font:650 25px/1.2 var(--sans);letter-spacing:-.038em;margin:28px 0 13px}.about-extras ul{padding-left:22px}.about-extras li{margin:5px 0}
 
 /* Music — a typographic index with a magazine's pace and restrained red details. */
@@ -161,7 +161,7 @@ img{display:block;max-width:100%}
 .music-masthead .section-eyebrow{color:#77847a}
 .masthead-side{font-size:10px;letter-spacing:.16em;color:#89948a;font-weight:650}
 .music-heading-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
-.music-heading-row h1{font:650 clamp(53px,6vw,78px)/1.05 var(--sans);letter-spacing:-.059em;margin:17px 0 0}
+.music-heading-row h1{font:650 clamp(43px,4.8vw,60px)/1.05 var(--sans);letter-spacing:-.059em;margin:17px 0 0}
 .music-heading-row .title-dot{color:var(--red)}
 .music-sections{border-block:1px solid var(--rule);background:#f0efea}
 .music-sections>.content-width{display:flex;flex-wrap:wrap;gap:12px 37px}

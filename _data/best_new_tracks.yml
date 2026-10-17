@@ -16,9 +16,62 @@
   cover: "/assets/images/album-covers/bluemoon.jpg"
   note: "Zara's stunning vocals and Helena Gao's gorgeous backing harmonies make the chorus absolutely irresistible."
 
+- title: "Tracking the Tropics"
+  artist: "Jess Williamson"
+  date: 2026-10-09
+  cover: "/assets/images/album-covers/jess.jpg"
+  note: "A wistful country gem about longing for old friends, familiar places, and a version of life you can never quite return to."
+
+- title: "The Governor's Waltz"
+  artist: "Phoebe Bridgers"
+  date: 2026-08-14
+  cover: "/assets/images/album-covers/lw.jpg"
+  note: "Phoebe's hushed vocals and delicate guitar make her painfully honest reflections on a failed relationship hit even harder."
+
 - title: "Melatonin"
   artist: "Tinashe"
-  date: 2026-8-13
+  date: 2026-08-13
   cover: "/assets/images/album-covers/melatonin.jpg"
   note: "Sleeping, sleeping, sleeping on me, bitch, you so melatonin."
 
+- title: "honeybee"
+  artist: "Olivia Rodrigo"
+  date: 2026-06-12
+  cover: "/assets/images/album-covers/ysps.jpg"
+  note: "Baby boy, honeybee, god I love the way you look at me."
+
+- title: "Brutalist"
+  artist: "Kim Petras"
+  date: 2026-05-29
+  cover: "/assets/images/album-covers/detour.jpg"
+  note: "A disarmingly sincere trans anthem, turning the memory of a demolished building into a tender reflection on childhood, identity, and growing up."
+
+- title: "Lovefield"
+  artist: "underscores"
+  date: 2026-03-20
+  cover: "/assets/images/album-covers/u.jpg"
+  note: "A tender, hypnotic loop that slowly builds into a euphoric trance finale."
+
+- title: "Dance With Me"
+  artist: "Grace Ives"
+  date: 2026-03-20
+  cover: "/assets/images/album-covers/gf.jpg"
+  note: "Grace lets her voice take the lead, and the strings and piano make the whole thing feel wonderfully sincere."
+
+- title: "Party At My Place"
+  artist: "xaviersobased / Skrillex / Dylan Brady"
+  date: 2026-01-30
+  cover: "/assets/images/album-covers/pamp.jpg"
+  note: "Glitchy synths, broken-up vocals, and a beat that sounds like it could short-circuit at any moment."
+
+- title: "CRANK"
+  artist: "Slayyyter"
+  date: 2025-10-24
+  cover: "/assets/images/album-covers/crank.jpg"
+  note: "Pounding snares, blown-out bass, and stuttering vocals. The industrial chaos has never sounded so good."
+
+- title: "Si Antes Te Hubiera Conocido"
+  artist: "KAROL G"
+  date: 2024-06-20
+  cover: "/assets/images/album-covers/si.jpg"
+  note: "Karol G makes a song about romantic regret sound like the happiest merengue at the party."
