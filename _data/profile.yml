@@ -1,0 +1,22 @@
+# Summary from assets/resume.pdf (October 2026).
+# This data is displayed on the About page. Update it when the resume changes.
+education:
+  school: "Peking University"
+  logo: "/assets/images/organizations/pku.png"
+  degree: "B.S. in Computer Science; B.Econ. in Economics"
+  period: "2023–2027 (expected)"
+
+internships:
+  - organization: "Galbot"
+    logo: "/assets/images/organizations/galbot.png"
+    url: "https://www.galbot.com/"
+    role: "Research Intern"
+    period: "Sep 2025 – Sep 2026"
+
+awards:
+  - title: "National Scholarship · 2×"
+    period: "2024–2025, 2025–2026"
+  - title: "Yanchuang Capital Scholarship"
+    period: "2023–2024"
+  - title: "Peking University Merit Student · 3×"
+    period: "2023–2024, 2024–2025, 2025–2026"

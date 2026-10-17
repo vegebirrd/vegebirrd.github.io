@@ -1,0 +1,15 @@
+main:
+  - title: Home
+    url: /
+  - title: Publications
+    url: /publications/
+  - title: Music
+    url: /music/
+  - title: Notes
+    url: /notes/
+  - title: Posts
+    url: /posts/
+  - title: About
+    url: /about/
+  - title: MuBTI
+    url: /MuBTI_test.html

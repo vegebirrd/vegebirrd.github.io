@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<section class="page-shell content-width notes-page">
+  <header class="page-intro notes-page__intro">
+    <span class="section-eyebrow">03 / NOTES</span>
+    <h1>Notes<span class="title-dot">.</span></h1>
+  </header>
+  <div class="notes-library-heading"><span>COURSE NOTES</span><span>{{ site.data.note_courses.size }} COURSES</span></div>
+  <div class="notes-course-grid">
+    {% for course in site.data.note_courses %}
+    <article class="notes-course-card notes-course-card--{{ forloop.index }}{% if course.pdf and course.pdf != empty %} notes-course-card--available{% endif %}">
+      <div class="notes-course-card__top">
+        <span class="notes-course-card__num">0{{ forloop.index }}</span>
+        {% if course.status == 'ongoing' %}<span class="notes-course-card__status notes-course-card__status--ongoing">Ongoing</span>{% endif %}
+      </div>
+      <div class="notes-course-card__illustration" aria-hidden="true">{% case course.discipline %}{% when 'Political Science' %}§{% when 'Literature' %}“{% when 'Philosophy' %}φ{% when 'Computer Science' %}⌘{% else %}✦{% endcase %}</div>
+      <div class="notes-course-card__info">
+        <p class="micro-label">{{ course.discipline }}</p>
+        <h2>{{ course.title }}</h2>
+        <p class="notes-course-card__zh">{{ course.zh_title }}</p>
+      </div>
+      {% if course.pdf and course.pdf != empty %}
+      <a class="notes-course-card__view" href="{{ course.pdf | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Read {{ course.title | escape }} notes PDF">Read PDF <span aria-hidden="true">↗</span></a>
+      <div class="notes-course-card__bottom"><span>PDF · {{ course.zh_title }}</span><a href="{{ course.pdf | relative_url }}" download aria-label="Download {{ course.title | escape }} PDF">Download <span aria-hidden="true">↓</span></a></div>
+      {% else %}
+      <span class="notes-course-card__pending">PDF coming soon</span>
+      <div class="notes-course-card__bottom"><span>{{ course.zh_title }}</span><span>—</span></div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+  {% assign published_count = 0 %}{% for note in site.notes %}{% unless note.published == false %}{% assign published_count = published_count | plus: 1 %}{% endunless %}{% endfor %}
+  {% if published_count > 0 %}
+  <section class="notes-other">
+    <div class="notes-library-heading"><span>MORE NOTES</span><span>{{ published_count }} ENTRIES</span></div>
+    <div class="notes-grid">{% assign sorted_notes = site.notes | sort: 'date' | reverse %}{% for note in sorted_notes %}{% unless note.published == false %}
+      <article class="note-card"><div class="note-card__kicker"><span>{{ note.subject | default: 'NOTES' }}</span><time>{{ note.date | date: '%Y.%m.%d' }}</time></div><h3><a href="{{ note.url | relative_url }}">{{ note.title }}</a></h3>{% if note.summary or note.description %}<p>{{ note.summary | default: note.description }}</p>{% endif %}<div class="note-card__bottom"><span>{% if note.attachment %}PDF{% else %}MARKDOWN{% endif %}</span><a href="{{ note.url | relative_url }}">Open ↗</a></div></article>
+    {% endunless %}{% endfor %}</div>
+  </section>{% endif %}
+</section>

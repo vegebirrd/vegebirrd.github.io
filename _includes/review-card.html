@@ -1,0 +1,17 @@
+<article class="review-card {% if include.featured %}review-card--featured{% endif %}">
+  <a class="review-card__cover" href="{{ include.post.url | relative_url }}" aria-label="Read {{ include.post.title | escape }}">
+    {% if include.post.cover %}<img src="{{ include.post.cover | relative_url }}" alt="{{ include.post.artist | default: include.post.title | escape }} cover artwork" loading="lazy">{% else %}<div class="cover-fallback">BIRD<br>LISTENS</div>{% endif %}
+  </a>
+  <div class="review-card__content">
+    <div class="review-meta"><span>{{ include.post.review_kind | default: 'Music feature' }}</span><span class="meta-dot">·</span><time datetime="{{ include.post.date | date: '%Y-%m-%d' }}">{{ include.post.date | date: '%b %d, %Y' }}</time></div>
+    <h3><a href="{{ include.post.url | relative_url }}">{{ include.post.display_title | default: include.post.title }}</a></h3>
+    {% if include.post.artist %}<p class="review-card__artist">{{ include.post.artist }}</p>{% endif %}
+    {% if include.post.deck %}<p class="review-card__deck">{{ include.post.deck }}</p>{% endif %}
+    <div class="review-card__bottom">
+      {% if include.post.rating %}<span class="score-small" aria-label="Rating {{ include.post.rating }} out of 10">{{ include.post.rating }}<small>/10</small></span>{% endif %}
+      {% if include.post.best_new_music or include.post.best_new_track or include.post.best_new_album %}<span class="bnm-badge">{% if include.post.review_kind == 'Track Review' %}BEST NEW TRACK{% else %}BEST NEW ALBUM{% endif %}</span>{% endif %}
+      {% unless include.post.rating %}<span class="reading-link">Read feature <span aria-hidden="true">↗</span></span>{% endunless %}
+    </div>
+    <a class="review-card__read" href="{{ include.post.url | relative_url }}">Read review <span aria-hidden="true">↗</span></a>
+  </div>
+</article>

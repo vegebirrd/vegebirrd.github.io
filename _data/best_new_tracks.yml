@@ -1,0 +1,24 @@
+# A personal, frequently updated selection of favorite tracks.
+# Empty for now: no song is selected on the owner's behalf.
+# To add a track, uncomment and adapt the example below.
+# Date = the date you added the song to your picks, not necessarily its release date.
+#
+
+- title: "expectations"
+  artist: "Olivia Rodrigo / Chappell Roan"
+  date: 2026-10-16
+  cover: "/assets/images/album-covers/expectations.jpg"
+  note: "E[Olivia]=E[E[Olivia|Chappell]]"
+
+- title: "Blue Moon"
+  artist: "Zara Larsson"
+  date: 2026-10-15
+  cover: "/assets/images/album-covers/bluemoon.jpg"
+  note: "Zara's stunning vocals and Helena Gao's gorgeous backing harmonies make the chorus absolutely irresistible."
+
+- title: "Melatonin"
+  artist: "Tinashe"
+  date: 2026-8-13
+  cover: "/assets/images/album-covers/melatonin.jpg"
+  note: "Sleeping, sleeping, sleeping on me, bitch, you so melatonin."
+

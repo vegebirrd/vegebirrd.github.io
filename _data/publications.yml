@@ -1,0 +1,49 @@
+- venue: CoRL 2026
+  year: '2026'
+  spotlight: true
+  teaser: /assets/images/publications/zeta.png
+  teaser_source: https://miyandoris.github.io/
+  teaser_alt: ZETA experimental setup and cross-embodiment generalization diagram
+  title: 'ZETA: A Controlled Study of Zero-Shot Cross-Embodiment VLA Transfer for Tabletop Manipulation'
+  authors: Mi Yan*, Wenhao Zhang*, Zhiqi Zhang*, Yu Peng*, Tangxinyu Wang*, Lingfei Zhai, Jiayi Su, Shengliang Deng, Lin Peng, Yaowei Liu, Yuxing Chen, Zhiyuan Wei, Jilong Wang, Jiayi Chen, Jiangran Lyu, Zhizheng Zhang†, He Wang†
+  description: A controlled study of cross-embodiment VLA transfer, separating strict zero-shot generalization to unseen robot embodiments from pretrain-exposed transfer, and analyzing the effects of state-action representations, embodiment diversity, auxiliary co-training, and target-embodiment exposure.
+  links:
+  - title: Paper
+    url: https://arxiv.org/abs/2609.02546
+  - title: Project
+    url: https://theone2006.github.io/ZETA-Web
+  - title: Code
+    url: https://github.com/MiYanDoris/ZETA
+  teaser_fallback: https://miyandoris.github.io/images/ZETA.png
+- venue: RSS 2026
+  year: '2026'
+  teaser: /assets/images/publications/stereovla.png
+  teaser_source: https://miyandoris.github.io/
+  teaser_alt: StereoVLA robot camera configurations and depth perception challenges
+  title: 'StereoVLA: Enhancing Vision-Language-Action Models with Stereo Vision'
+  authors: Shengliang Deng*, Mi Yan*, Yixin Zheng*, Jiayi Su, Wenhao Zhang, Xiaoguang Zhao, Heming Cui, Zhizheng Zhang†, He Wang†
+  description: A stereo-vision VLA that jointly models semantic and geometric cues for fine-grained spatial perception, improving manipulation accuracy and robustness across large camera-pose variations.
+  links:
+  - title: Paper
+    url: https://arxiv.org/abs/2512.21970
+  - title: Project
+    url: https://shengliangd.github.io/StereoVLA-Webpage
+  - title: Code
+    url: https://github.com/shengliangd/StereoVLA
+  teaser_fallback: https://miyandoris.github.io/images/StereoVLA.png
+- venue: CoRL 2025
+  year: '2025'
+  teaser: /assets/images/publications/graspvla.jpg
+  teaser_source: https://pku-epic.github.io/GraspVLA-web/
+  teaser_alt: GraspVLA pretraining and generalization research teaser
+  title: 'GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data'
+  authors: Shengliang Deng*, Mi Yan*, Songlin Wei, Haixin Ma, Yuxin Yang, Jiayi Chen, Zhiqi Zhang, Taoyu Yang, Xuheng Zhang, Wenhao Zhang, Heming Cui, Zhizheng Zhang†, He Wang†
+  description: A grasping foundation model pretrained on billion-scale synthetic action data, enabling direct sim-to-real transfer, open-vocabulary generalization, and few-shot adaptation to downstream preferences.
+  links:
+  - title: Paper
+    url: https://arxiv.org/abs/2505.03233
+  - title: Project
+    url: https://pku-epic.github.io/GraspVLA-web
+  - title: Code
+    url: https://github.com/PKU-EPIC/GraspVLA
+  teaser_fallback: https://pku-epic.github.io/GraspVLA-web/images/teaser.jpg

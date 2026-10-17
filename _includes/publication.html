@@ -1,0 +1,12 @@
+<article class="publication-row">
+  <a class="publication-teaser" href="{{ include.item.links[0].url }}" target="_blank" rel="noopener noreferrer" aria-label="View {{ include.item.title | escape }}">
+    {% if include.item.teaser %}<img src="{{ include.item.teaser }}" alt="{{ include.item.teaser_alt | default: include.item.title | escape }}" loading="lazy" decoding="async" onerror="if(this.dataset.retry)return this.style.display='none';this.dataset.retry=1;this.src='{{ include.item.teaser_fallback }}'">{% endif %}<span class="teaser-fallback" aria-hidden="true">{{ include.item.title | split: ":" | first | truncate: 28 }}</span>
+  </a>
+  <div class="publication-main">
+    <div class="publication-kicker"><span class="venue-label">{{ include.item.venue }}</span>{% if include.item.spotlight %}<span class="pub-spotlight">SPOTLIGHT</span>{% endif %}<span class="pub-year">{{ include.item.year }}</span></div>
+    <h3><a href="{{ include.item.links[0].url }}" target="_blank" rel="noopener noreferrer">{{ include.item.title }}</a></h3>
+    <p class="publication-authors">{{ include.item.authors | replace: 'Wenhao Zhang', '<strong>Wenhao Zhang</strong>' }}</p>
+    <p class="publication-description">{{ include.item.description }}</p>
+    <div class="resource-links">{% for link in include.item.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.title }} <span aria-hidden="true">↗</span></a>{% endfor %}</div>
+  </div>
+</article>

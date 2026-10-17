@@ -1,0 +1,20 @@
+<div class="about-cv" aria-label="Education, internships, and awards">
+  <section class="cv-group" aria-labelledby="about-education">
+    <h2 id="about-education">Education</h2>
+    <div class="cv-group__content"><div class="cv-entry">
+      <div class="cv-logo cv-logo--school"><img src="{{ site.data.profile.education.logo | relative_url }}" alt="Peking University seal" width="44" height="44" loading="lazy" onerror="if(this.dataset.retry){this.style.display='none';this.parentNode.classList.add('cv-logo--fallback');return;}this.dataset.retry=1;this.src='https://miyandoris.github.io/images/peking_university.png'"><span class="logo-fallback">PKU</span></div>
+      <div class="cv-entry__details"><div class="cv-entry__line"><strong>{{ site.data.profile.education.school }}</strong><time>{{ site.data.profile.education.period }}</time></div><p>{{ site.data.profile.education.degree }}</p></div>
+    </div></div>
+  </section>
+  <section class="cv-group" aria-labelledby="about-internships">
+    <h2 id="about-internships">Internships</h2>
+    <div class="cv-group__content">{% for role in site.data.profile.internships %}<div class="cv-entry">
+      <div class="cv-logo cv-logo--company"><img src="{{ role.logo | relative_url }}" alt="{{ role.organization | escape }} logo" loading="lazy" onerror="if(this.dataset.retry){this.style.display='none';this.parentNode.classList.add('cv-logo--fallback');return;}this.dataset.retry=1;this.src='https://flagopen.github.io/RoboCOIN/assets/galbot-UpoV8OT2.png'"><span class="logo-fallback">GALBOT</span></div>
+      <div class="cv-entry__details"><div class="cv-entry__line"><strong>{% if role.url %}<a href="{{ role.url }}" target="_blank" rel="noopener noreferrer">{{ role.organization }}</a>{% else %}{{ role.organization }}{% endif %}</strong><time>{{ role.period }}</time></div><p>{{ role.role }}</p></div>
+    </div>{% endfor %}</div>
+  </section>
+  <section class="cv-group" aria-labelledby="about-awards">
+    <h2 id="about-awards">Selected Awards</h2>
+    <div class="cv-group__content cv-awards">{% for award in site.data.profile.awards %}<div class="cv-award"><span>{{ award.title }}</span><time>{{ award.period }}</time></div>{% endfor %}</div>
+  </section>
+</div>

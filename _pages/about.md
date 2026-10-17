@@ -1,0 +1,26 @@
+---
+layout: about
+permalink: /about/
+title: "About"
+section_label: "ABOUT"
+---
+
+## About My Research Interests
+- Embodied AI  
+- Investment Research  
+- Macroeconomics  
+
+## About My Desert Island Albums
+- In Rainbows  
+- OK Computer  
+- Kid A  
+- Saint Cloud  
+- The Low End Theory  
+- Neon Bible  
+- Luminescent Creatures  
+- Hounds of Love  
+
+## About My Friends
+- [Yuxuan Wang](https://yxwang1215.github.io/), a junior at Xidian University, majoring in **Software Engineering**, and an incoming PhD student at Peking University’s School of Computer Science.
+- [Leopold Wuhan Zhou](https://leopoldwuhanzhou.github.io/), a junior at Peking University, majoring in **Electronic Information Science** and **Mathematics**.
+- [Aurora Liu](https://liuwxy-aurora.github.io/), an incoming PhD student at the University of California, Los Angeles (UCLA).

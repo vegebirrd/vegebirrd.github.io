@@ -1,0 +1,30 @@
+# Notes are separate from Posts. Add a PDF path only after uploading the file.
+# status: ongoing | complete (independent of whether a PDF is already uploaded)
+- title: "Principles of Political Science"
+  slug: "political-science"
+  zh_title: "政治学原理"
+  discipline: "Political Science"
+  type: "COURSE NOTES"
+  status: ongoing
+  pdf: "/assets/notes/PS.pdf"
+- title: "Text and Meaning: British and American Short Stories"
+  slug: "short-stories"
+  zh_title: "英美短篇小说文本分析与鉴赏"
+  discipline: "Literature"
+  type: "COURSE NOTES"
+  status: complete
+  pdf: "/assets/notes/BAS.pdf"
+- title: "Introduction to Philosophy"
+  slug: "philosophy"
+  zh_title: "哲学导论"
+  discipline: "Philosophy"
+  type: "COURSE NOTES"
+  status: ongoing
+  pdf: "/assets/notes/Intro2Philosophy.pdf"
+- title: "Operating System"
+  slug: "operating-system"
+  zh_title: "操作系统"
+  discipline: "Computer Science"
+  type: "COURSE NOTES"
+  status: complete
+  pdf: "/assets/notes/OSNote.pdf"

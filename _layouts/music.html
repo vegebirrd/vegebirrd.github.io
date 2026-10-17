@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<div class="music-page">
+  <header class="music-page__header content-width">
+    <div class="music-masthead"><span class="section-eyebrow">02 / MUSIC</span><span class="masthead-side">ALBUMS · TRACKS · LISTS</span></div>
+    <div class="music-heading-row"><h1>Music<span class="title-dot">.</span></h1></div>
+  </header>
+  <nav class="music-sections" aria-label="Music sections"><div class="content-width"><a href="#album-reviews"><span>01</span> Albums</a><a href="#track-reviews"><span>02</span> Tracks</a><a href="#best-new-tracks"><span>03</span> Best New Tracks</a><a href="#year-end-lists"><span>04</span> Year-End Lists</a><a href="#music-features"><span>05</span> Features</a></div></nav>
+
+  {% assign album_reviews = site.posts | where: 'review_kind', 'Album Review' %}
+  <section id="album-reviews" class="music-section content-width"><div class="music-section__heading"><span class="section-number">01 / REVIEWS</span><h2>Album <em>Reviews</em></h2><span class="music-section__caption">{{ album_reviews.size }} {% if album_reviews.size == 1 %}review{% else %}reviews{% endif %}</span></div>
+    <div class="music-review-grid music-review-grid--albums" data-progressive="album" data-batch="6">{% for post in album_reviews %}{% include review-card.html post=post %}{% endfor %}</div>
+    <button type="button" class="load-more" data-show-more="album" hidden>Show more album reviews <span aria-hidden="true">↓</span></button>
+  </section>
+
+  {% assign track_reviews = site.posts | where: 'review_kind', 'Track Review' %}
+  <section id="track-reviews" class="music-section content-width"><div class="music-section__heading"><span class="section-number">02 / REVIEWS</span><h2>Track <em>Reviews</em></h2><span class="music-section__caption">{{ track_reviews.size }} {% if track_reviews.size == 1 %}review{% else %}reviews{% endif %}</span></div>
+    <div class="music-review-grid music-review-grid--tracks" data-progressive="track" data-batch="6">{% for post in track_reviews %}{% include review-card.html post=post %}{% endfor %}</div>
+    <button type="button" class="load-more" data-show-more="track" hidden>Show more track reviews <span aria-hidden="true">↓</span></button>
+  </section>
+
+  {% assign tracks = site.data.best_new_tracks %}
+  <section id="best-new-tracks" class="music-section music-section--soft"><div class="content-width">
+    <div class="music-section__heading"><span class="section-number">03 / SELECTIONS</span><h2>Best New <em>Tracks</em></h2><span class="music-section__caption">{{ tracks.size }} selected</span></div>
+    {% if tracks and tracks.size > 0 %}
+    <div class="bnt-grid" data-progressive="bnt" data-batch="6">{% for track in tracks %}<article class="bnt-card">
+      <div class="bnt-card__art">{% if track.cover %}<img src="{{ track.cover | relative_url }}" alt="Artwork for {{ track.title | escape }}" loading="lazy">{% else %}<div class="bnt-card__art-placeholder" aria-hidden="true">♪</div>{% endif %}<span class="bnt-image-flag">BEST NEW TRACK</span></div>
+      <div class="bnt-card__metadata">{% if track.date %}<time datetime="{{ track.date | date: '%Y-%m-%d' }}">{{ track.date | date: '%b %Y' }}</time>{% endif %}</div>
+      <h3>{{ track.title }}</h3><p class="bnt-card__artist">{{ track.artist }}</p>
+      {% if track.note %}<p class="bnt-card__note">{{ track.note }}</p>{% endif %}
+      {% if track.listen_url %}<a class="bnt-card__listen" href="{{ track.listen_url }}" target="_blank" rel="noopener noreferrer">Listen ↗</a>{% endif %}
+    </article>{% endfor %}</div>
+    <button type="button" class="load-more" data-show-more="bnt" hidden>Show more tracks <span aria-hidden="true">↓</span></button>
+    {% else %}<p class="music-empty">No tracks selected yet.</p>{% endif %}
+  </div></section>
+
+  <section id="year-end-lists" class="music-section content-width"><div class="music-section__heading"><span class="section-number">04 / RANKINGS</span><h2>Year-End <em>Lists</em></h2></div><div class="feature-grid">{% for post in site.posts %}{% if post.review_kind == 'Year-End List' %}<a class="feature-card" href="{{ post.url | relative_url }}"><div class="feature-card__image">{% if post.cover %}<img src="{{ post.cover | relative_url }}" alt="{{ post.title | escape }}" loading="lazy">{% endif %}</div><span class="small-label">{{ post.date | date: '%Y' }} / LISTS</span><h3>{{ post.title }}</h3></a>{% endif %}{% endfor %}</div></section>
+  <section id="music-features" class="music-section content-width"><div class="music-section__heading"><span class="section-number">05 / FEATURES</span><h2>Features</h2></div><div class="feature-grid">{% for post in site.posts %}{% if post.categories contains 'Reviews' and post.review_kind != 'Album Review' and post.review_kind != 'Track Review' and post.review_kind != 'Year-End List' %}<a class="feature-card" href="{{ post.url | relative_url }}"><div class="feature-card__image">{% if post.cover %}<img src="{{ post.cover | relative_url }}" alt="{{ post.title | escape }}" loading="lazy">{% endif %}</div><span class="small-label">{{ post.review_kind | default: 'FEATURE' }}</span><h3>{{ post.title }}</h3></a>{% endif %}{% endfor %}</div></section>
+</div>

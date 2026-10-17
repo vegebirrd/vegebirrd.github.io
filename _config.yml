@@ -1,0 +1,64 @@
+title: BirdBlog
+asset_version: "v13.2"
+email:
+description: "Wenhao Zhang"
+url: "https://vegebirrd.github.io"
+baseurl: ""
+lang: en
+timezone: Asia/Shanghai
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+collections:
+  notes:
+    output: true
+    permalink: /notes/:name/
+include:
+  - _pages
+exclude:
+  - README.md
+  - How_to_update.md
+  - NOTES_GUIDE.md
+  - UPDATE_GUIDE.md
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - '*.zip'
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: post
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: page
+author:
+  name: "Wenhao Zhang"
+  avatar: "/assets/images/avatar.jpg"
+  bio: "I am an angler married to the sea."
+  links:
+    - label: GitHub
+      url: https://github.com/vegebirrd
+    - label: Instagram
+      url: https://www.instagram.com/idiupax/
+    - label: WeChat
+      url: /assets/images/Wechat.jpg
+    - label: Resume
+      url: /assets/resume.pdf
+    - label: AOTY
+      url: https://www.albumoftheyear.org/user/cattthis/
