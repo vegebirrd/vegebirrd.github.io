@@ -137,11 +137,11 @@ img{display:block;max-width:100%}
 /* About uses CV rules only here; long-form personal lists below. */
 .about-page{max-width:1020px}
 .about-intro{padding-bottom:36px;margin-bottom:15px}
-.about-intro h1{font-size:66px}.about-intro>p:last-child{color:var(--ink-soft);line-height:1.78;font-size:14px}
+.about-intro h1{font-size:64px}.about-intro>p:last-child{color:var(--ink-soft);line-height:1.78;font-size:16px}
 .title-dot{color:var(--red)}
 .about-cv{margin:20px 0 52px;border-top:1px solid var(--rule)}
 .cv-group{display:grid;grid-template-columns:164px minmax(0,1fr);gap:22px;padding:30px 0;border-bottom:1px solid var(--rule)}
-.cv-group h2{font-size:13px;font-weight:750;margin:7px 0 0;letter-spacing:-.01em}
+.cv-group h2{font-size:17px;font-weight:750;margin:7px 0 0;letter-spacing:-.01em}
 .cv-group__content{min-width:0}.cv-entry{display:grid;grid-template-columns:53px minmax(0,1fr);align-items:center;gap:17px}
 .cv-logo{height:53px;width:53px;padding:4px;background:#fcfcfa;border:1px solid #e1e4de;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .cv-logo img{height:auto;width:auto;max-height:100%;max-width:100%;object-fit:contain}
@@ -150,9 +150,9 @@ img{display:block;max-width:100%}
 .logo-fallback{display:none}.cv-logo--fallback{background:#fbfaf6}.cv-logo--fallback .logo-fallback{display:block;color:#8b1a22;font-size:13px;font-weight:850;letter-spacing:.02em}
 .cv-logo--company.cv-logo--fallback .logo-fallback{color:var(--ink);font-size:10px;letter-spacing:.07em}
 .cv-entry__details{min-width:0}.cv-entry__line{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:3px 20px}
-.cv-entry__line strong{font-weight:740;font-size:16px}.cv-entry__line time,.cv-award time{color:#8a968b;font-size:12px;white-space:nowrap}
-.cv-entry__details p{font-size:14px;color:#6d7c70;margin:3px 0 0}.cv-dot{color:#aeb6ad}
-.cv-awards{display:grid;gap:13px;padding-top:3px}.cv-award{display:flex;justify-content:space-between;gap:15px 20px;font-size:14px}.cv-award span{font-weight:580}
+.cv-entry__line strong{font-weight:740;font-size:16px}.cv-entry__line time,.cv-award time{color:#8a968b;font-size:13px;white-space:nowrap}
+.cv-entry__details p{font-size:15px;color:#6d7c70;margin:3px 0 0}.cv-dot{color:#aeb6ad}
+.cv-awards{display:grid;gap:13px;padding-top:3px}.cv-award{display:flex;justify-content:space-between;gap:15px 20px;font-size:15px}.cv-award span{font-weight:580}
 .about-extras{border-top:1px solid var(--rule);padding-top:24px}.about-extras h2{font:650 25px/1.2 var(--sans);letter-spacing:-.038em;margin:28px 0 13px}.about-extras ul{padding-left:22px}.about-extras li{margin:5px 0}
 
 /* Music — a typographic index with a magazine's pace and restrained red details. */
