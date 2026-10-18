@@ -37,7 +37,7 @@ layout: default
       <div class="post-card-grid post-card-grid--home">
         {% assign post_count = 0 %}{% for post in site.posts %}
           {% unless post.categories contains 'Reviews' %}
-            {% if post_count < 2 %}{% include post-card.html item=post %}{% assign post_count = post_count | plus: 1 %}{% endif %}
+            {% if post_count < 3 %}{% include post-card.html item=post %}{% assign post_count = post_count | plus: 1 %}{% endif %}
           {% endunless %}
         {% endfor %}
       </div>

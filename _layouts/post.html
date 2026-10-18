@@ -4,6 +4,7 @@ layout: default
 {% assign is_journal = false %}{% if page.categories contains 'Journal' %}{% assign is_journal = true %}{% endif %}
 {% assign is_course = false %}{% if page.categories contains 'Course Evaluation' %}{% assign is_course = true %}{% endif %}
 {% assign is_music_feature = false %}{% if page.categories contains 'Reviews' %}{% assign is_music_feature = true %}{% endif %}
+{% assign journal_topic = page.journal_topic | default: page.tags.first %}
 <article class="article-shell content-width{% if is_journal %} article-shell--journal{% elsif is_course %} article-shell--course{% elsif is_music_feature %} article-shell--music-feature{% endif %}">
   <a class="back-link" href="{% if page.collection == 'notes' %}{{ '/notes/' | relative_url }}{% elsif is_music_feature %}{{ '/music/' | relative_url }}{% else %}{{ '/posts/' | relative_url }}{% endif %}">← Back to {% if page.collection == 'notes' %}notes{% elsif is_music_feature %}music{% else %}posts{% endif %}</a>
   <header class="article-header{% if is_journal %} article-header--journal{% elsif is_music_feature %} article-header--music-feature{% endif %}">
@@ -11,8 +12,7 @@ layout: default
       {% if page.collection == 'notes' %}NOTE / {{ page.subject | default: 'LEARNING' }}
       {% elsif is_course %}ACADEMIC / COURSE REVIEW
       {% elsif is_music_feature %}MUSIC / {{ page.review_kind | default: 'FEATURE' | upcase }}
-      {% elsif page.tags contains 'Film' %}JOURNAL / FILM
-      {% elsif page.tags contains 'Fashion' %}JOURNAL / FASHION
+      {% elsif journal_topic %}JOURNAL / {{ journal_topic | upcase | escape }}
       {% else %}JOURNAL{% endif %}
     </p>
     <h1>{{ page.title }}</h1>

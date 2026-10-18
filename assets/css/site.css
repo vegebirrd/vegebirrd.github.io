@@ -595,7 +595,7 @@ img{display:block;max-width:100%}
 .posts-page .archive-controls { margin-bottom:27px; font-size:11px; letter-spacing:.07em; }
 .posts-page .archive-controls a { font-size:12px; }
 .archive-group { margin-top:42px; }
-.post-card-grid--home { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.post-card-grid--home { grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
 .home-posts .post-card__media { aspect-ratio:1.52; }
 .home-posts .post-card__title { font-size:clamp(20px,2vw,25px); }
 .home-posts .post-card__meta { margin-top:14px; }
@@ -640,9 +640,9 @@ img{display:block;max-width:100%}
 .load-more--bnt { border-color:#b7c0b6; background:#fcfcf8; }
 .load-more--bnt[aria-expanded="true"] { background:transparent; }
 
-/* Features and rankings: two spacious columns until there is a larger collection. */
-.feature-grid--editorial { grid-template-columns:repeat(2,minmax(0,1fr)); gap:44px 32px; }
-.feature-grid--editorial:has(> .feature-card:nth-child(3)) { grid-template-columns:repeat(3,minmax(0,1fr)); gap:36px 24px; }
+/* Music features and rankings: restore the original three-column desktop layout,
+   regardless of the number of articles. Responsive overrides follow below. */
+.feature-grid--editorial { grid-template-columns:repeat(3,minmax(0,1fr)); gap:36px 24px; }
 .feature-card { display:block; }
 .feature-card__image { aspect-ratio:1.48; margin-bottom:19px; background:#e7e9e1; }
 .feature-card__image-fallback { display:flex; align-items:center; justify-content:center; width:100%; height:100%; font:500 34px var(--serif); color:#839084; }
@@ -685,9 +685,15 @@ img{display:block;max-width:100%}
 }
 @media (min-width:621px) and (max-width:1080px) {
   .post-card-grid--archive { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .post-card-grid--home { grid-template-columns:1fr; }
+  .post-card-grid--home { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .home-posts .post-card__media { aspect-ratio:1.76; }
-  .feature-grid--editorial:has(> .feature-card:nth-child(3)) { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .feature-grid--editorial { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (min-width:1081px) and (max-width:1120px) {
+  .post-card-grid--home { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (min-width:621px) and (max-width:767px) {
+  .post-card-grid--home { grid-template-columns:1fr; }
 }
 @media (min-width:621px) and (max-width:860px) {
   .publication-authors,.publication-description { font-size:12px; }
@@ -789,7 +795,7 @@ img{display:block;max-width:100%}
   .bnt-card__note { font-size:12.5px; line-height:1.55; }
   .bnt-card__metadata { font-size:10px; }
   .bnt-card__listen { font-size:12px; }
-  .feature-grid--editorial,.feature-grid--editorial:has(> .feature-card:nth-child(3)) { grid-template-columns:1fr; gap:0; }
+  .feature-grid--editorial { grid-template-columns:1fr; gap:0; }
   .feature-card { grid-template-columns:112px minmax(0,1fr); gap:5px 17px; padding:20px 0; }
   .feature-card__image { width:112px; aspect-ratio:1; grid-row:1/span 3; margin:0; }
   .feature-card__meta { grid-column:2; grid-row:1; font-size:10px; gap:5px; }
