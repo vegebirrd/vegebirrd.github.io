@@ -1,4 +1,33 @@
 ---
 layout: default
 ---
-<article class="article-shell content-width"><a class="back-link" href="{% if page.collection == 'notes' %}{{ '/notes/' | relative_url }}{% elsif page.categories contains 'Reviews' %}{{ '/music/' | relative_url }}{% else %}{{ '/posts/' | relative_url }}{% endif %}">← Back to {% if page.collection == 'notes' %}notes{% elsif page.categories contains 'Reviews' %}music{% else %}posts{% endif %}</a><header class="article-header"><p class="section-eyebrow">{% if page.collection == 'notes' %}NOTE / {{ page.subject | default: 'LEARNING' }}{% elsif page.categories contains 'Course Evaluation' %}ACADEMIC / COURSE GUIDE{% elsif page.categories contains 'Reviews' %}MUSIC / FEATURE{% else %}FROM THE JOURNAL{% endif %}</p><h1>{{ page.title }}</h1><div class="article-byline">{% unless page.categories contains 'Reviews' %}<span>By Wenhao Zhang</span><span class="meta-dot">·</span>{% endunless %}<time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %d, %Y' }}</time></div></header><div class="prose article-body">{{ content }}{% if page.attachment %}<p class="download-note"><a href="{{ page.attachment | relative_url }}" target="_blank" rel="noopener noreferrer">View / download attached file ↗</a></p>{% endif %}</div><div class="article-tail"><span>BirdBlog</span><a href="{{ '/' | relative_url }}">Return home ↗</a></div></article>
+{% assign is_journal = false %}{% if page.categories contains 'Journal' %}{% assign is_journal = true %}{% endif %}
+{% assign is_course = false %}{% if page.categories contains 'Course Evaluation' %}{% assign is_course = true %}{% endif %}
+{% assign is_music_feature = false %}{% if page.categories contains 'Reviews' %}{% assign is_music_feature = true %}{% endif %}
+<article class="article-shell content-width{% if is_journal %} article-shell--journal{% elsif is_course %} article-shell--course{% elsif is_music_feature %} article-shell--music-feature{% endif %}">
+  <a class="back-link" href="{% if page.collection == 'notes' %}{{ '/notes/' | relative_url }}{% elsif is_music_feature %}{{ '/music/' | relative_url }}{% else %}{{ '/posts/' | relative_url }}{% endif %}">← Back to {% if page.collection == 'notes' %}notes{% elsif is_music_feature %}music{% else %}posts{% endif %}</a>
+  <header class="article-header{% if is_journal %} article-header--journal{% elsif is_music_feature %} article-header--music-feature{% endif %}">
+    <p class="section-eyebrow">
+      {% if page.collection == 'notes' %}NOTE / {{ page.subject | default: 'LEARNING' }}
+      {% elsif is_course %}ACADEMIC / COURSE REVIEW
+      {% elsif is_music_feature %}MUSIC / {{ page.review_kind | default: 'FEATURE' | upcase }}
+      {% elsif page.tags contains 'Film' %}JOURNAL / FILM
+      {% elsif page.tags contains 'Fashion' %}JOURNAL / FASHION
+      {% else %}JOURNAL{% endif %}
+    </p>
+    <h1>{{ page.title }}</h1>
+    {% if page.deck %}<p class="article-deck">{{ page.deck }}</p>{% endif %}
+    <div class="article-byline">
+      {% unless is_music_feature %}<span>Wenhao Zhang</span><span class="meta-dot">·</span>{% endunless %}
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %d, %Y' }}</time>
+    </div>
+  </header>
+  {% if is_music_feature and page.cover %}
+    <figure class="music-feature-hero"><img src="{{ page.cover | relative_url }}" alt="{{ page.title | escape }} feature artwork" loading="eager"><figcaption>{{ page.review_kind | default: 'Music Feature' }} <span aria-hidden="true">/</span> BirdBlog</figcaption></figure>
+  {% endif %}
+  <div class="prose article-body{% if is_journal %} article-body--journal{% elsif is_course %} article-body--course{% elsif is_music_feature %} article-body--music-feature{% endif %}">
+    {{ content }}
+    {% if page.attachment %}<p class="download-note"><a href="{{ page.attachment | relative_url }}" target="_blank" rel="noopener noreferrer">View / download attached file ↗</a></p>{% endif %}
+  </div>
+  <div class="article-tail"><span>BirdBlog / {% if is_journal %}Journal{% elsif is_course %}Course Reviews{% elsif is_music_feature %}Music{% else %}Posts{% endif %}</span><a href="{% if is_music_feature %}{{ '/music/' | relative_url }}{% else %}{{ '/posts/' | relative_url }}{% endif %}">{% if is_music_feature %}More music ↗{% else %}All posts ↗{% endif %}</a></div>
+</article>

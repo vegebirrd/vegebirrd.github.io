@@ -25,6 +25,8 @@
           {% if page.url == item.url %}{% assign active = true %}{% endif %}
           {% if item.title == 'Music' and page.categories contains 'Reviews' %}{% assign active = true %}{% endif %}
           {% if item.title == 'Notes' and page.collection == 'notes' %}{% assign active = true %}{% endif %}
+          {% if item.title == 'Posts' and page.layout == 'post' and page.collection != 'notes' and page.categories contains 'Journal' %}{% assign active = true %}{% endif %}
+          {% if item.title == 'Posts' and page.layout == 'post' and page.categories contains 'Course Evaluation' %}{% assign active = true %}{% endif %}
           <a {% if active %}class="active" aria-current="page"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a>
         {% endfor %}
       </nav>
@@ -40,7 +42,7 @@
     <div class="content-width">
       <div class="footer-top">
         <div><a class="footer-signature" href="{{ '/' | relative_url }}">BirdBlog<span>.</span></a><p>Wenhao Zhang</p></div>
-        <div class="footer-nav"><a href="{{ '/publications/' | relative_url }}">Publications</a><a href="{{ '/music/' | relative_url }}">Music</a><a href="{{ '/notes/' | relative_url }}">Notes</a><a href="{{ '/posts/' | relative_url }}">Posts</a><a href="{{ '/MuBTI_test.html' | relative_url }}">MuBTI</a></div>
+        <div class="footer-nav"><a href="{{ '/publications/' | relative_url }}">Publications</a><a href="{{ '/notes/' | relative_url }}">Notes</a><a href="{{ '/posts/' | relative_url }}">Posts</a><a href="{{ '/music/' | relative_url }}">Music</a><a href="{{ '/MuBTI_test.html' | relative_url }}">MuBTI</a></div>
         <div class="footer-nav"><a href="https://github.com/vegebirrd" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.instagram.com/idiupax/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="{{ '/assets/resume.pdf' | relative_url }}">Resume ↗</a><button type="button" data-wechat-open aria-haspopup="dialog" aria-controls="wechat-dialog">WeChat ↗</button><a href="https://www.albumoftheyear.org/user/cattthis/" target="_blank" rel="noopener noreferrer">AOTY ↗</a></div>
       </div>
       <div class="footer-bottom"><span>© {{ 'now' | date: '%Y' }} BirdBlog · Wenhao Zhang</span><a href="#main">Back to top ↑</a></div>

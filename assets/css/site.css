@@ -543,3 +543,316 @@ img{display:block;max-width:100%}
     font-size: 11px;
   }
 }
+/* v14.2 — responsive type rhythm, editorial Posts, and expandable Music archive.
+   Added after legacy breakpoints on purpose; these are the final overrides. */
+:root { --measure: 710px; }
+.small-label,.section-eyebrow,.micro-label { font-size:11px; letter-spacing:.125em; }
+.fine-print,.section-footnote { font-size:12px; }
+.quiet-link { font-size:13px; }
+.panel-heading h2 { font-size:clamp(37px,3.8vw,50px); }
+.home-panel { padding-top:60px; }
+
+/* Homepage readability: avoid miniature research metadata and music descriptions. */
+.publication-main h3 { font-size:18px; line-height:1.36; }
+.publication-authors, .publication-description { font-size:12px; line-height:1.65; }
+.publication-description { color:#637266; }
+.resource-links a { font-size:11px; padding:5px 10px; }
+.venue-label { font-size:10px; }
+.review-meta { font-size:11px; }
+.review-card__artist { font-size:13px; }
+.review-card__deck { font-size:12.5px; line-height:1.58; }
+.review-card__read,.home-music-links a { font-size:12px; }
+.home-note-row__body strong { font-size:14px; }
+.home-note-row__body span,.home-note-row__status,.home-note-row__action { font-size:12px; }
+.home-bnt__entry div span { font-size:11px; }
+.home-bnt__heading a { font-size:12px; }
+.home-bnt__entry strong { font-size:15px; }
+
+/* Posts — a magazine-like picture-led grid with typographic covers for text-only entries. */
+.post-card-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:24px; row-gap:42px; align-items:start; }
+.post-card { min-width:0; display:flex; flex-direction:column; }
+.post-card__media { position:relative; display:flex; flex-direction:column; justify-content:space-between; width:100%; aspect-ratio:1.34; overflow:hidden; background:#ebece6; border:1px solid #e0e1d9; }
+.post-card__media img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .35s ease; }
+.post-card:hover .post-card__media img { transform:scale(1.04); }
+.post-card__media--type { padding:20px; background:#e5e8e0; color:#2b362d; border:0; }
+.post-card:nth-child(3n+2) .post-card__media--type { background:#eee7df; }
+.post-card:nth-child(3n) .post-card__media--type { background:#e4e7e7; }
+.post-card--course .post-card__media--type { background:#eee8de; }
+.post-card__media--type::before { content:''; position:absolute; width:50px; height:3px; top:0; left:20px; background:var(--red); }
+.post-card__type-eyebrow { font:750 10px/1.5 var(--sans); letter-spacing:.13em; color:#798277; text-transform:uppercase; }
+.post-card__type-heading { display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden; max-width:88%; font:500 clamp(23px,2.5vw,37px)/1.09 var(--serif); letter-spacing:-.035em; text-wrap:balance; }
+.post-card__type-footer { display:flex; justify-content:space-between; color:#77857b; font:650 11px var(--sans); }
+.post-card__type-footer span:last-child { font-size:18px; color:var(--red); }
+.post-card__meta { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:8px 12px; margin:18px 0 9px; font:700 10px/1.45 var(--sans); letter-spacing:.11em; color:#819084; }
+.post-card__meta span:first-child { color:var(--red); }
+.post-card__meta time { font-weight:500; letter-spacing:0; color:#929c92; }
+.post-card__title { margin:0; font:650 clamp(20px,2.15vw,29px)/1.2 var(--sans); letter-spacing:-.037em; overflow-wrap:break-word; text-wrap:pretty; }
+.post-card__deck { color:#6d786e; font-size:13px; line-height:1.65; margin:11px 0 0; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; }
+.post-card__read { align-self:start; font-size:12px; color:#596d60; font-weight:700; margin-top:13px; border-bottom:1px solid #bbc6b9; padding-bottom:3px; }
+.post-card__read span { color:var(--red); }
+.post-card__read:hover { color:var(--red); border-color:var(--red); }
+.posts-page .page-intro { margin-bottom:26px; }
+.posts-page .archive-controls { margin-bottom:27px; font-size:11px; letter-spacing:.07em; }
+.posts-page .archive-controls a { font-size:12px; }
+.archive-group { margin-top:42px; }
+.post-card-grid--home { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.home-posts .post-card__media { aspect-ratio:1.52; }
+.home-posts .post-card__title { font-size:clamp(20px,2vw,25px); }
+.home-posts .post-card__meta { margin-top:14px; }
+
+/* Journal reads like a personal magazine essay; courses remain functional reference notes. */
+.article-shell--journal { max-width:980px; padding-top:51px; }
+.article-header--journal { text-align:center; padding:32px 0 43px; margin:0 auto 42px; border-top:1px solid var(--rule); max-width:875px; }
+.article-header--journal .section-eyebrow { color:var(--red); font-size:11px; letter-spacing:.18em; }
+.article-header--journal h1 { font:650 clamp(43px,5.5vw,72px)/1.1 var(--sans); letter-spacing:-.053em; margin:20px auto 18px; text-wrap:balance; }
+.article-header--journal .article-byline { justify-content:center; color:#839083; font-size:12px; }
+.article-deck { max-width:620px; margin:10px auto 17px; font:400 italic 20px/1.4 var(--serif); color:#758073; }
+.article-body--journal { max-width:var(--measure); margin:0 auto; font:400 22px/1.69 var(--reading); color:#344037; }
+.article-body--journal p { margin:0 0 25px; }
+.article-body--journal > p:first-of-type::first-letter { float:left; color:var(--ink); font:500 3.3em/.84 var(--reading); padding:.1em .1em 0 0; }
+.article-body--journal :is(h2,h3) { font-family:var(--sans); font-weight:650; }
+.article-body--journal img { width:auto; max-width:100%; max-height:530px; object-fit:contain; margin:36px auto 11px; }
+.article-body--journal p:has(> img) { margin-bottom:0; }
+.article-body--journal p:has(> img) + p:has(> em) { color:#7e8a7e; font:italic 14px/1.55 var(--sans); text-align:center; margin:0 auto 32px; }
+.article-body--journal blockquote { font-style:italic; font-size:1.1em; }
+.article-shell--journal .article-tail { max-width:var(--measure); margin-inline:auto; }
+.article-shell--course { max-width:1020px; }
+.article-shell--course .article-header { padding-bottom:26px; }
+.article-shell--course .article-header h1 { font-size:clamp(38px,4.6vw,58px); }
+.article-body--course { font:400 16px/1.85 var(--sans); max-width:850px; }
+.article-body--course h1 { font-size:28px; margin-top:39px; padding-bottom:10px; border-bottom:1px solid var(--rule); }
+.article-body--course h2 { font-size:22px; margin-top:35px; }
+.article-body--course :is(p,li) { line-height:1.88; }
+.article-body--course a { text-decoration-thickness:1px; }
+
+/* Music indexes: existing album lead + ordered, pageable remainder. */
+.music-review-grid .review-meta { font-size:11px; }
+.music-review-grid .review-card__artist { font-size:13px; }
+.music-review-grid .review-card__deck { font-size:12.5px; line-height:1.54; }
+.music-review-grid .review-card__read { font-size:12px; }
+.music-review-grid .bnm-badge { font-size:9px; }
+.music-section__caption { font-size:12px; }
+.bnt-card__note { font-size:13px; color:#657568; line-height:1.66; }
+.bnt-card__metadata { font-size:11px; }
+.bnt-card__artist { font-size:13px; }
+.bnt-card__listen { font-size:12px; }
+.load-more { font-size:13px; }
+.load-more--bnt { border-color:#b7c0b6; background:#fcfcf8; }
+.load-more--bnt[aria-expanded="true"] { background:transparent; }
+
+/* Features and rankings: two spacious columns until there is a larger collection. */
+.feature-grid--editorial { grid-template-columns:repeat(2,minmax(0,1fr)); gap:44px 32px; }
+.feature-grid--editorial:has(> .feature-card:nth-child(3)) { grid-template-columns:repeat(3,minmax(0,1fr)); gap:36px 24px; }
+.feature-card { display:block; }
+.feature-card__image { aspect-ratio:1.48; margin-bottom:19px; background:#e7e9e1; }
+.feature-card__image-fallback { display:flex; align-items:center; justify-content:center; width:100%; height:100%; font:500 34px var(--serif); color:#839084; }
+.feature-card__meta { display:flex; justify-content:space-between; gap:10px; color:#808e83; font-size:11px; font-weight:700; letter-spacing:.14em; }
+.feature-card__meta time { color:#98a298; letter-spacing:0; font-weight:500; }
+.feature-card h3 { font-size:clamp(25px,2.8vw,36px); line-height:1.17; letter-spacing:-.043em; margin:13px 0 0; text-wrap:balance; }
+.feature-card__deck { color:#77847b; font-size:13px; line-height:1.6; margin:9px 0 0; }
+.feature-card__read { display:inline-block; margin-top:17px; font-size:12px; font-weight:700; border-bottom:1px solid #c3c9bd; padding-bottom:4px; }
+.feature-card:hover .feature-card__read { color:var(--red); border-color:var(--red); }
+.article-shell--music-feature { max-width:1020px; }
+.article-header--music-feature { text-align:center; padding:31px 0 29px; border-bottom:0; border-top:1px solid var(--rule); }
+.article-header--music-feature h1 { max-width:850px; margin-inline:auto; font-size:clamp(44px,5.5vw,72px); text-wrap:balance; }
+.article-header--music-feature .section-eyebrow { color:var(--red); }
+.article-header--music-feature .article-byline { justify-content:center; }
+.music-feature-hero { background:#f0efe9; margin:0 auto 49px; padding:32px 25px 19px; text-align:center; max-width:790px; }
+.music-feature-hero img { width:min(350px,100%); height:auto; aspect-ratio:1; object-fit:cover; margin:auto; }
+.music-feature-hero figcaption { font:700 10px/1.5 var(--sans); letter-spacing:.14em; text-transform:uppercase; color:#8b938b; margin-top:16px; }
+.music-feature-hero figcaption span { color:var(--red); padding:0 8px; }
+.article-body--music-feature { max-width:740px; margin:0 auto; font:400 20px/1.74 var(--reading); }
+.article-body--music-feature > p:first-of-type { font-size:23px; line-height:1.61; }
+.article-body--music-feature h2 { border-top:1px solid #d5d9d0; padding:30px 0 0; margin:52px 0 18px; font:650 29px/1.22 var(--sans); letter-spacing:-.035em; }
+.article-body--music-feature h2 em { font:italic 500 1.06em/1.17 var(--serif); }
+.article-body--music-feature h2.music-rank-heading { display:flex; gap:19px; align-items:baseline; }
+.music-rank-number { font:500 39px/.9 var(--serif); color:var(--red); min-width:48px; letter-spacing:-.045em; }
+.article-body--music-feature h2 + p { margin-top:0; }
+.article-body--music-feature p:has(> img) img { max-width:min(320px,100%); max-height:none; margin:16px auto 27px; }
+.article-body--music-feature p:has(> img) { text-align:center; }
+.article-shell--music-feature .article-tail { max-width:740px; margin-inline:auto; }
+
+/* Relaxed About CV layout and consistent type scale. */
+.about-intro>p:last-child { font-size:17px; line-height:1.72; max-width:760px; }
+.cv-group h2 { font-size:18px; }
+.cv-entry__line strong { font-size:17px; }
+.cv-entry__details p { font-size:15.5px; }
+.cv-entry__line time,.cv-award time { font-size:13.5px; }
+.cv-award { font-size:15.5px; }
+
+@media (min-width:1300px) {
+  .post-card-grid--home { gap:28px; }
+}
+@media (min-width:621px) and (max-width:1080px) {
+  .post-card-grid--archive { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .post-card-grid--home { grid-template-columns:1fr; }
+  .home-posts .post-card__media { aspect-ratio:1.76; }
+  .feature-grid--editorial:has(> .feature-card:nth-child(3)) { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (min-width:621px) and (max-width:860px) {
+  .publication-authors,.publication-description { font-size:12px; }
+  .publication-row { grid-template-columns:130px minmax(0,1fr); }
+  .home-bnt__grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:620px) {
+  body { font-size:15px; line-height:1.65; }
+  .content-width { padding-inline:20px; }
+  .small-label,.section-eyebrow,.micro-label { font-size:10.5px; }
+  .home-frame { gap:32px; }
+  .home-sidebar__inner { grid-template-columns:90px minmax(0,1fr); gap:0 16px; }
+  .profile-portrait { width:90px; height:120px; }
+  .sidebar-name { font-size:22px; }
+  .sidebar-about { font-size:12px; margin-bottom:5px; }
+  .home-sidebar .profile-links { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .profile-links > :is(a,button) { font-size:12px; gap:6px; min-height:28px; padding:5px 0; }
+  .panel-heading h2 { font-size:clamp(34px,9vw,43px); }
+  .panel-heading .quiet-link { font-size:12px; }
+  .home-panel { padding-top:47px; }
+  .publication-row { grid-template-columns:102px minmax(0,1fr); column-gap:14px; padding:21px 0; }
+  .publication-main h3 { font-size:15.5px; line-height:1.35; margin-bottom:9px; }
+  .publication-authors { font-size:11.5px; line-height:1.55; }
+  .publication-description { display:none; }
+  .publication-kicker { gap:5px; }
+  .venue-label,.pub-spotlight { font-size:9px; }
+  .pub-year { font-size:10px; }
+  .resource-links a { font-size:10.5px; padding:4px 8px; }
+  .home-note-row__body strong { font-size:14px; }
+  .home-note-row__body span,.home-note-row__status,.home-note-row__action { font-size:11.5px; }
+  .home-review-grid { gap:9px; }
+  .review-card { grid-template-columns:106px minmax(0,1fr); gap:15px; }
+  .home-review-grid .review-card:first-child { grid-template-columns:106px minmax(0,1fr); gap:15px; }
+  .review-card h3,.home-review-grid .review-card:first-child h3 { font-size:22px; }
+  .review-card__deck { font-size:12px; line-height:1.49; }
+  .review-card__artist { font-size:12px; }
+  .home-bnt__grid { grid-template-columns:1fr; }
+  .home-bnt__entry { gap:13px; padding:7px 9px 7px 0; }
+  .home-bnt__entry img,.home-bnt__placeholder { width:58px; height:58px; flex-basis:58px; }
+  .home-bnt__entry strong { font-size:16px; }
+  .home-bnt__entry div span { font-size:12px; }
+  .page-intro h1,.about-intro h1 { font-size:clamp(43px,11vw,53px); }
+  .page-intro>p:last-child { font-size:15px; }
+  .about-intro>p:last-child { font-size:16px; line-height:1.75; }
+  .about-cv { margin-top:15px; }
+  .cv-group { padding:25px 0; }
+  .cv-group h2 { font-size:19px; margin-bottom:17px; }
+  .cv-entry { grid-template-columns:47px minmax(0,1fr); gap:12px; align-items:start; }
+  .cv-logo,.cv-logo--company { width:47px; height:47px; }
+  .cv-entry__line { display:block; }
+  .cv-entry__line strong { display:block; font-size:16px; line-height:1.35; }
+  .cv-entry__line time { display:block; font-size:12px; white-space:normal; line-height:1.5; margin-top:3px; }
+  .cv-entry__details p { font-size:14.5px; line-height:1.5; margin-top:6px; }
+  .cv-awards { gap:17px; }
+  .cv-award { display:block; font-size:14px; line-height:1.5; }
+  .cv-award time { display:block; margin-top:3px; font-size:12px; white-space:normal; }
+  .post-card-grid--home,.post-card-grid--archive { grid-template-columns:1fr; row-gap:32px; }
+  .post-card__media,.home-posts .post-card__media { aspect-ratio:1.58; }
+  .post-card__media--type { padding:19px; }
+  .post-card__title,.home-posts .post-card__title { font-size:25px; }
+  .post-card__type-heading { font-size:clamp(28px,8vw,40px); }
+  .post-card__meta { font-size:10.5px; }
+  .post-card__deck { font-size:13px; }
+  .posts-page .archive-controls { font-size:11px; flex-wrap:wrap; }
+  .archive-group__heading h2 { font-size:24px; }
+  .article-shell--journal,.article-shell--course,.article-shell--music-feature { padding-top:37px; }
+  .back-link { margin-bottom:24px; font-size:12px; }
+  .article-header--journal { padding:23px 0 27px; margin-bottom:27px; }
+  .article-header--journal h1,.article-header--music-feature h1 { font-size:clamp(37px,10vw,51px); }
+  .article-header--journal .article-byline { font-size:12px; }
+  .article-deck { font-size:17px; }
+  .article-body--journal { font-size:20px; line-height:1.72; }
+  .article-body--journal > p:first-of-type::first-letter { font-size:2.9em; padding-top:.12em; }
+  .article-body--journal p { margin-bottom:22px; }
+  .article-body--journal img { margin-top:26px; }
+  .article-body--course { font-size:15px; line-height:1.76; }
+  .article-body--course h1 { font-size:25px; }
+  .article-body--course h2 { font-size:21px; }
+  .music-review-grid .review-card,.music-review-grid--tracks .review-card,
+  .music-review-grid--albums .review-card:first-child { grid-template-columns:104px minmax(0,1fr); gap:13px; padding:18px 0; min-height:0; }
+  .music-review-grid .review-card__cover { width:104px; height:104px; }
+  .music-review-grid .review-card__content,
+  .music-review-grid--albums .review-card:first-child .review-card__content { min-height:0; }
+  .music-review-grid .review-card h3,
+  .music-review-grid--albums .review-card:first-child h3 { font-size:23px; }
+  .music-review-grid .review-meta { font-size:10px; }
+  .music-review-grid .review-card__artist,
+  .music-review-grid--albums .review-card:first-child .review-card__artist { font-size:12px; }
+  .music-review-grid .review-card__deck,
+  .music-review-grid--albums .review-card:first-child .review-card__deck { font-size:12px; line-height:1.5; }
+  .music-review-grid .review-card__bottom,
+  .music-review-grid--albums .review-card:first-child .review-card__bottom { margin-top:9px; padding-top:0; }
+  .music-section__heading h2 { font-size:clamp(34px,9vw,43px); }
+  .music-section__caption { font-size:11px; }
+  .bnt-card { grid-template-columns:100px minmax(0,1fr); gap:0 14px; padding:17px 0; }
+  .bnt-card__art { width:100px; height:100px; }
+  .bnt-card h3 { font-size:22px; }
+  .bnt-card__artist { font-size:12px; }
+  .bnt-card__note { font-size:12.5px; line-height:1.55; }
+  .bnt-card__metadata { font-size:10px; }
+  .bnt-card__listen { font-size:12px; }
+  .feature-grid--editorial,.feature-grid--editorial:has(> .feature-card:nth-child(3)) { grid-template-columns:1fr; gap:0; }
+  .feature-card { grid-template-columns:112px minmax(0,1fr); gap:5px 17px; padding:20px 0; }
+  .feature-card__image { width:112px; aspect-ratio:1; grid-row:1/span 3; margin:0; }
+  .feature-card__meta { grid-column:2; grid-row:1; font-size:10px; gap:5px; }
+  .feature-card h3 { grid-column:2; grid-row:2; font-size:22px; margin:4px 0 0; }
+  .feature-card__deck { display:none; }
+  .feature-card__read { grid-column:2; grid-row:3; margin-top:7px; font-size:11px; }
+  .feature-card { display:grid; }
+  .music-feature-hero { padding:23px 17px 16px; margin-bottom:32px; }
+  .music-feature-hero img { width:min(235px,100%); }
+  .article-body--music-feature { font-size:18px; line-height:1.7; }
+  .article-body--music-feature > p:first-of-type { font-size:20px; }
+  .article-body--music-feature h2 { font-size:23px; margin-top:40px; padding-top:24px; }
+  .article-body--music-feature h2.music-rank-heading { gap:13px; }
+  .music-rank-number { font-size:33px; min-width:39px; }
+  .article-body--music-feature p:has(> img) img { max-width:min(260px,100%); }
+}
+@media (max-width:359px) {
+  .home-sidebar__inner { grid-template-columns:79px minmax(0,1fr); gap:0 12px; }
+  .profile-portrait { width:79px; height:108px; }
+  .profile-links > :is(a,button) { font-size:11.5px; }
+  .publication-row { grid-template-columns:89px minmax(0,1fr); gap:12px; }
+  .publication-main h3 { font-size:14.5px; }
+  .music-review-grid .review-card h3,
+  .music-review-grid--albums .review-card:first-child h3 { font-size:21px; }
+}
+
+/* v15: featured review identity — visible in every album/track review card.
+   Separate from the Best New Tracks recommendation grid. */
+.review-card__cover { position:relative; isolation:isolate; }
+.review-cover-flag {
+  position:absolute;
+  z-index:1;
+  bottom:0;
+  left:0;
+  max-width:100%;
+  box-sizing:border-box;
+  display:inline-block;
+  background:var(--red);
+  color:#fff;
+  padding:8px 10px;
+  font:800 9px/1.2 var(--sans);
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.review-card--best-new .score-small { color:var(--red-deep); }
+.review-card--best-new .review-card__cover { outline:1px solid rgba(156,60,51,.18); outline-offset:-1px; }
+.review-card--best-new .review-card__cover:hover .review-cover-flag { background:var(--red-deep); }
+/* Let the full album/track review keep its original (pre-redesign) layout.
+   Best New still uses the existing red circular score and .bnm-badge. */
+@media (max-width:620px) {
+  .review-cover-flag { font-size:8.5px; padding:6px 5px; letter-spacing:0; }
+}
+
+/* Chinese font compatibility: Latin journal prose remains Newsreader; Chinese
+   glyphs prefer the same sans-serif CJK stack used by the original website. */
+.article-body--journal {
+  font-family:'Newsreader',Georgia,'Iowan Old Style','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif;
+}
+
+/* Complete dates for editorial cards, even on narrow screens. */
+.bnt-card__metadata time,.feature-card__meta time,.post-card__meta time,.review-meta time,.post-card__type-footer span:first-child { font-variant-numeric:tabular-nums; white-space:nowrap; }
+@media(max-width:480px) {
+  .feature-card__meta { flex-wrap:wrap; row-gap:2px; }
+  .feature-card__meta time { white-space:nowrap; }
+}

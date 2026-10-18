@@ -8,6 +8,9 @@ tags:
   - Film
   - A24
 permalink: /posts/i-saw-the-tv-glow/
+card_image: "/assets/images/posts/tvglow.jpg"
+card_image_alt: "I Saw the TV Glow film still"
+deck: "The quiet horror of losing years of your life to a version of yourself that isn’t yours."
 ---
 
 *I Saw the TV Glow* is the best horror film I've ever seen. Its horror doesn't come from jump scares, but from something much more unsettling: a reality that feels painfully familiar. It's the horror of growing up queer in a world that has already decided who you're supposed to be, of spending every day quietly cutting away parts of yourself just to get by.

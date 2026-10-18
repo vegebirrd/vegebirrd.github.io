@@ -1,5 +1,5 @@
 <article class="writing-row">
-  <div class="writing-row__date"><time datetime="{{ include.item.date | date: '%Y-%m-%d' }}">{{ include.item.date | date: '%b %d, %Y' }}</time></div>
+  <div class="writing-row__date"><time datetime="{{ include.item.date | date: '%Y-%m-%d' }}">{{ include.item.date | date: '%d %b %Y' }}</time></div>
   <div>
     <div class="micro-label">{% if include.item.categories contains 'Reviews' %}Music / Reviews{% elsif include.item.categories contains 'Course Evaluation' %}Academics / Course reviews{% else %}Journal{% endif %}</div>
     <h3><a href="{{ include.item.url | relative_url }}">{{ include.item.title }}</a></h3>

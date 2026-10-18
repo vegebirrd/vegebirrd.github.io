@@ -6,6 +6,8 @@ categories:
 tags:
   - Course Evaluation
   - PKU
+card_label: "Course Reviews"
+deck: "Third-year courses, exams, and the materials I found useful."
 ---
   
 # 信科专业课

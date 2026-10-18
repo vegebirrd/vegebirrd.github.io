@@ -3,12 +3,12 @@ main:
     url: /
   - title: Publications
     url: /publications/
-  - title: Music
-    url: /music/
   - title: Notes
     url: /notes/
   - title: Posts
     url: /posts/
+  - title: Music
+    url: /music/
   - title: About
     url: /about/
   - title: MuBTI

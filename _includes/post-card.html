@@ -1,0 +1,24 @@
+{% assign item = include.item %}
+{% assign preview_image = item.card_image | default: item.cover %}
+{% unless preview_image %}
+  {% assign inline_media = item.content | split: '![' %}
+  {% if inline_media.size > 1 %}{% assign preview_image = inline_media[1] | split: '](' | last | split: ')' | first %}{% endif %}
+{% endunless %}
+{% assign is_course = false %}{% if item.categories contains 'Course Evaluation' %}{% assign is_course = true %}{% endif %}
+<article class="post-card{% if is_course %} post-card--course{% else %} post-card--journal{% endif %}">
+  <a class="post-card__media{% unless preview_image %} post-card__media--type{% endunless %}" href="{{ item.url | relative_url }}" aria-label="Read {{ item.title | escape }}">
+    {% if preview_image %}
+      <img src="{{ preview_image | relative_url }}" alt="{{ item.card_image_alt | default: item.title | escape }}" loading="lazy">
+    {% else %}
+      <span class="post-card__type-eyebrow" aria-hidden="true">{% if is_course %}PEKING UNIVERSITY / COURSE REVIEWS{% else %}BIRDBLOG / JOURNAL{% endif %}</span>
+      <span class="post-card__type-heading" aria-hidden="true">{{ item.card_label | default: item.title }}</span>
+      <span class="post-card__type-footer" aria-hidden="true"><span>{{ item.date | date: '%d %b %Y' }}</span><span>↗</span></span>
+    {% endif %}
+  </a>
+  <div class="post-card__meta">
+    <span>{% if is_course %}COURSE REVIEW{% elsif item.tags contains 'Film' %}JOURNAL / FILM{% elsif item.tags contains 'Fashion' %}JOURNAL / FASHION{% else %}JOURNAL{% endif %}</span>
+    <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: '%d %b %Y' }}</time>
+  </div>
+  <h3 class="post-card__title"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+  {% if item.deck %}<p class="post-card__deck">{{ item.deck }}</p>{% endif %}<a class="post-card__read" href="{{ item.url | relative_url }}">Read article <span aria-hidden="true">↗</span></a>
+</article>

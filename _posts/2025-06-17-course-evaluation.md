@@ -6,6 +6,8 @@ categories:
 tags:
   - Course Evaluation
   - PKU
+card_label: "Course Reviews"
+deck: "A look back at my second-year classes, with notes and resources."
 ---
 
 回顾大二这一年，我学习了许多课程，也收获了不少体会。为了方便学弟学妹参考，也算是对自己阶段性学习的总结，我整理了这份课程测评和资料开源包，供大家参考。  

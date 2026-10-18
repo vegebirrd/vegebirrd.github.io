@@ -18,8 +18,32 @@ layout: default
       <p class="fine-print">* Equal contribution &nbsp; † Corresponding author</p>
     </section>
 
+    <section class="home-panel home-notes" id="notes" aria-labelledby="home-notes">
+      <div class="panel-heading"><div><span class="small-label">02 / NOTES</span><h2 id="home-notes">Notes</h2></div><a class="quiet-link" href="{{ '/notes/' | relative_url }}">View all <span aria-hidden="true">↗</span></a></div>
+      <div class="home-note-list">
+        {% for course in site.data.note_courses %}
+        <div class="home-note-row">
+          <span class="home-note-row__index">0{{ forloop.index }}</span>
+          <div class="home-note-row__body"><strong>{{ course.title }}</strong><span>{{ course.zh_title }}</span></div>
+          <span class="home-note-row__status{% if course.status == 'ongoing' %} home-note-row__status--ongoing{% endif %}">{% if course.status == 'ongoing' %}Ongoing{% elsif course.pdf and course.pdf != empty %}PDF{% else %}Complete{% endif %}</span>
+          {% if course.pdf and course.pdf != empty %}<a class="home-note-row__action" href="{{ course.pdf | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Read {{ course.title | escape }} PDF">Read ↗</a>{% else %}<span class="home-note-row__action home-note-row__action--disabled">PDF pending</span>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="home-panel home-posts" id="posts" aria-labelledby="home-posts">
+      <div class="panel-heading"><div><span class="small-label">03 / WRITING</span><h2 id="home-posts">Posts</h2></div><a class="quiet-link" href="{{ '/posts/' | relative_url }}">View all <span aria-hidden="true">↗</span></a></div>
+      <div class="post-card-grid post-card-grid--home">
+        {% assign post_count = 0 %}{% for post in site.posts %}
+          {% unless post.categories contains 'Reviews' %}
+            {% if post_count < 2 %}{% include post-card.html item=post %}{% assign post_count = post_count | plus: 1 %}{% endif %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </section>
     <section class="home-panel home-music" id="music" aria-labelledby="home-music">
-      <div class="panel-heading"><div><span class="small-label">02 / MUSIC</span><h2 id="home-music">Music</h2></div><a class="quiet-link" href="{{ '/music/' | relative_url }}">View all <span aria-hidden="true">↗</span></a></div>
+      <div class="panel-heading"><div><span class="small-label">04 / MUSIC</span><h2 id="home-music">Music</h2></div><a class="quiet-link" href="{{ '/music/' | relative_url }}">View all <span aria-hidden="true">↗</span></a></div>
       <div class="home-review-grid">
         {% assign album_count = 0 %}{% for post in site.posts %}{% if post.review_kind == 'Album Review' and album_count < 1 %}{% include review-card.html post=post %}{% assign album_count = album_count | plus: 1 %}{% endif %}{% endfor %}
         {% assign track_count = 0 %}{% for post in site.posts %}{% if post.review_kind == 'Track Review' and track_count < 2 %}{% include review-card.html post=post %}{% assign track_count = track_count | plus: 1 %}{% endif %}{% endfor %}
@@ -35,32 +59,6 @@ layout: default
       <nav class="home-music-links" aria-label="Music categories"><a href="{{ '/music/' | relative_url }}#album-reviews">Album Reviews ↗</a><a href="{{ '/music/' | relative_url }}#track-reviews">Track Reviews ↗</a><a href="{{ '/music/' | relative_url }}#best-new-tracks">Best New Tracks ↗</a><a href="{{ '/music/' | relative_url }}#year-end-lists">Year-End Lists ↗</a></nav>
     </section>
 
-    <section class="home-panel home-notes" id="notes" aria-labelledby="home-notes">
-      <div class="panel-heading"><div><span class="small-label">03 / NOTES</span><h2 id="home-notes">Notes</h2></div><a class="quiet-link" href="{{ '/notes/' | relative_url }}">View all <span aria-hidden="true">↗</span></a></div>
-      <div class="home-note-list">
-        {% for course in site.data.note_courses %}
-        <div class="home-note-row">
-          <span class="home-note-row__index">0{{ forloop.index }}</span>
-          <div class="home-note-row__body"><strong>{{ course.title }}</strong><span>{{ course.zh_title }}</span></div>
-          <span class="home-note-row__status{% if course.status == 'ongoing' %} home-note-row__status--ongoing{% endif %}">{% if course.status == 'ongoing' %}Ongoing{% elsif course.pdf and course.pdf != empty %}PDF{% else %}Complete{% endif %}</span>
-          {% if course.pdf and course.pdf != empty %}<a class="home-note-row__action" href="{{ course.pdf | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Read {{ course.title | escape }} PDF">Read ↗</a>{% else %}<span class="home-note-row__action home-note-row__action--disabled">PDF pending</span>{% endif %}
-        </div>
-        {% endfor %}
-      </div>
-    </section>
 
-    <section class="home-panel home-posts" id="posts" aria-labelledby="home-posts">
-      <div class="panel-heading"><div><span class="small-label">04 / WRITING</span><h2 id="home-posts">Posts</h2></div><a class="quiet-link" href="{{ '/posts/' | relative_url }}">View all <span aria-hidden="true">↗</span></a></div>
-      <div class="home-post-list">
-        {% assign post_count = 0 %}{% for post in site.posts %}
-          {% unless post.categories contains 'Reviews' %}
-            {% if post_count < 3 %}
-            <article class="home-post-row"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y.%m.%d' }}</time><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3><a class="home-post-row__arrow" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title | escape }}">↗</a></article>
-            {% assign post_count = post_count | plus: 1 %}
-            {% endif %}
-          {% endunless %}
-        {% endfor %}
-      </div>
-    </section>
   </div>
 </div>

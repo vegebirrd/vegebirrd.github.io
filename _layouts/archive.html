@@ -3,24 +3,24 @@ layout: default
 ---
 <section class="page-shell content-width posts-page">
   <header class="page-intro">
-    <span class="section-eyebrow">04 / WRITING</span>
+    <span class="section-eyebrow">03 / WRITING</span>
     <h1>{% if page.archive_type == 'category' %}Categories{% elsif page.archive_type == 'tag' %}Tags{% else %}Posts{% endif %}<span class="title-dot">.</span></h1>
   </header>
   {% if page.archive_type == 'category' %}
     {% assign sorted_cats = site.categories | sort %}
     {% for cat in sorted_cats %}
       {% assign entry_count = 0 %}{% for post in cat[1] %}{% unless post.categories contains 'Reviews' %}{% assign entry_count = entry_count | plus: 1 %}{% endunless %}{% endfor %}
-      {% if entry_count > 0 %}<section class="archive-group"><div class="archive-group__heading"><h2>{{ cat[0] }}</h2><span>{{ entry_count }} {% if entry_count == 1 %}POST{% else %}POSTS{% endif %}</span></div><div class="writing-list">{% for post in cat[1] %}{% unless post.categories contains 'Reviews' %}{% include post-row.html item=post %}{% endunless %}{% endfor %}</div></section>{% endif %}
+      {% if entry_count > 0 %}<section class="archive-group"><div class="archive-group__heading"><h2>{{ cat[0] }}</h2><span>{{ entry_count }} {% if entry_count == 1 %}POST{% else %}POSTS{% endif %}</span></div><div class="post-card-grid post-card-grid--archive">{% for post in cat[1] %}{% unless post.categories contains 'Reviews' %}{% include post-card.html item=post %}{% endunless %}{% endfor %}</div></section>{% endif %}
     {% endfor %}
   {% elsif page.archive_type == 'tag' %}
     {% assign sorted_tags = site.tags | sort %}
     {% for tag in sorted_tags %}
       {% assign entry_count = 0 %}{% for post in tag[1] %}{% unless post.categories contains 'Reviews' %}{% assign entry_count = entry_count | plus: 1 %}{% endunless %}{% endfor %}
-      {% if entry_count > 0 %}<section class="archive-group"><div class="archive-group__heading"><h2>{{ tag[0] }}</h2><span>{{ entry_count }} {% if entry_count == 1 %}POST{% else %}POSTS{% endif %}</span></div><div class="writing-list">{% for post in tag[1] %}{% unless post.categories contains 'Reviews' %}{% include post-row.html item=post %}{% endunless %}{% endfor %}</div></section>{% endif %}
+      {% if entry_count > 0 %}<section class="archive-group"><div class="archive-group__heading"><h2>{{ tag[0] }}</h2><span>{{ entry_count }} {% if entry_count == 1 %}POST{% else %}POSTS{% endif %}</span></div><div class="post-card-grid post-card-grid--archive">{% for post in tag[1] %}{% unless post.categories contains 'Reviews' %}{% include post-card.html item=post %}{% endunless %}{% endfor %}</div></section>{% endif %}
     {% endfor %}
   {% else %}
     {% assign regular_count = 0 %}{% for post in site.posts %}{% unless post.categories contains 'Reviews' %}{% assign regular_count = regular_count | plus: 1 %}{% endunless %}{% endfor %}
     <nav class="archive-controls" aria-label="Post archive navigation"><span>{{ regular_count }} POSTS</span><div><a href="{{ '/categories/' | relative_url }}">Categories ↗</a><a href="{{ '/tags/' | relative_url }}">Tags ↗</a></div></nav>
-    <div class="writing-list">{% for post in site.posts %}{% unless post.categories contains 'Reviews' %}{% include post-row.html item=post %}{% endunless %}{% endfor %}</div>
+    <div class="post-card-grid post-card-grid--archive">{% for post in site.posts %}{% unless post.categories contains 'Reviews' %}{% include post-card.html item=post %}{% endunless %}{% endfor %}</div>
   {% endif %}
 </section>

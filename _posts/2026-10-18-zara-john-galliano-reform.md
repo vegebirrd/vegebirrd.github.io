@@ -10,6 +10,9 @@ tags:
   - Zara
   - John Galliano
 permalink: /posts/zara-john-galliano-reform/
+card_image: "/assets/images/posts/galliano-zara/reform-revolutionary-tailoring.jpg"
+card_image_alt: "Re{form} campaign tailoring and hats"
+deck: "The coats, the dresses, and the unexpected pleasures of Galliano’s first Zara collection."
 ---
 
 When Zara announced a two-year partnership with John Galliano in March, I wondered what the clothes would actually look like. Collaborations between high-street brands and luxury designers are hardly new, but Galliano seemed like an especially unlikely choice. His work has always involved a certain amount of dressing up, a fondness for strange proportions and clothes that don't necessarily explain themselves at first glance. Zara, meanwhile, is where you go when you want something you can picture wearing next week. Their first collection together, *Re{form}*, arrived on October 1, and I'm glad it doesn't try too hard to make those two worlds meet in the middle.

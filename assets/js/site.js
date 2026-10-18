@@ -66,21 +66,63 @@
     if (id === requestId) results.append(fragment);
   });
 
-  // Progressive sections: cards remain visible without JS. The button reveals 6 more.
+  // Progressive music browsing: newest reviews first, reveal another batch on demand.
+  // BNT is deliberately different: Show all tracks -> Collapse, keeping the same button.
   document.querySelectorAll('[data-progressive]').forEach(group => {
     const cards = Array.from(group.children).filter(child => child.matches('.review-card, .bnt-card'));
     const size = Math.max(1, Number(group.dataset.batch) || 6);
-    if (cards.length <= size) return;
+    const kind = group.dataset.progressive;
+    const button = document.querySelector('[data-show-more="' + kind + '"]');
+    if (!button || cards.length <= size) return;
     let visible = size;
-    const button = document.querySelector('[data-show-more="' + group.dataset.progressive + '"]');
-    if (!button) return;
+    const isBnt = kind === 'bnt';
+    const textNode = button.querySelector('[data-toggle-label]');
+    const arrow = button.querySelector('[data-toggle-arrow]');
     function update() {
       cards.forEach((card, i) => { card.hidden = i >= visible; });
-      button.hidden = visible >= cards.length;
-      button.setAttribute('aria-label', 'Show more, ' + Math.max(0, cards.length - visible) + ' remaining');
+      const fullyExpanded = visible >= cards.length;
+      button.hidden = !isBnt && fullyExpanded;
+      if (isBnt) {
+        if (textNode) textNode.textContent = fullyExpanded ? 'Collapse' : 'Show all tracks';
+        if (arrow) arrow.textContent = fullyExpanded ? '↑' : '↓';
+        button.setAttribute('aria-expanded', String(fullyExpanded));
+        button.setAttribute('aria-label', fullyExpanded ? 'Collapse Best New Tracks' : 'Show all Best New Tracks');
+      } else {
+        button.setAttribute('aria-label', 'Show more ' + kind + ' reviews, ' + (cards.length - visible) + ' remaining');
+      }
     }
-    button.addEventListener('click', () => { visible = Math.min(cards.length, visible + size); update(); });
+    button.addEventListener('click', () => {
+      if (isBnt) {
+        const wasExpanded = visible === cards.length;
+        visible = wasExpanded ? size : cards.length;
+        update();
+        if (wasExpanded) {
+          const section = group.closest('section');
+          if (section && button.getBoundingClientRect().top < 0) {
+            section.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+          }
+        }
+      } else {
+        visible = Math.min(cards.length, visible + size);
+        update();
+      }
+    });
     update();
+    button.hidden = false;
+  });
+
+  // Rank typography: preserve markup (italics/links) while highlighting the numeral.
+  document.querySelectorAll('.article-body--music-feature h2').forEach(heading => {
+    const first = heading.firstChild;
+    if (!first || first.nodeType !== Node.TEXT_NODE) return;
+    const match = first.textContent.match(/^\s*(\d{1,3})\.\s*/);
+    if (!match) return;
+    first.textContent = first.textContent.slice(match[0].length);
+    const num = document.createElement('span');
+    num.className = 'music-rank-number';
+    num.textContent = match[1].padStart(2, '0');
+    heading.insertBefore(num, first);
+    heading.classList.add('music-rank-heading');
   });
 
 

@@ -8,7 +8,7 @@ education:
 
 internships:
   - organization: "Galbot"
-    logo: "/assets/images/organizations/galbot.png"
+    logo: "/assets/images/organizations/galbot.png" 
     url: "https://www.galbot.com/"
     role: "Research Intern"
     period: "Sep 2025 – Sep 2026"

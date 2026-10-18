@@ -1,7 +1,7 @@
 # A personal, frequently updated selection of favorite tracks.
 # Empty for now: no song is selected on the owner's behalf.
 # To add a track, uncomment and adapt the example below.
-# Date = the date you added the song to your picks, not necessarily its release date.
+# Date = track release date when known, in YYYY-MM-DD form; do not invent missing days.
 #
 
 - title: "expectations"
@@ -70,8 +70,26 @@
   cover: "/assets/images/album-covers/crank.jpg"
   note: "Pounding snares, blown-out bass, and stuttering vocals. The industrial chaos has never sounded so good."
 
+- title: "DtMF"
+  artist: "Bad Bunny"
+  date: 2025-01-05
+  cover: "/assets/images/album-covers/dtmf.jpg"
+  note: "A heartfelt and deeply moving reflection on time, memory, and all the moments we wish we could relive."
+
+- title: "Lucifèrine"
+  artist: "Ichiko Aoba"
+  date: 2024-11-13
+  cover: "/assets/images/album-covers/lc.jpg"
+  note: "So tender, weightless, and dreamlike, as if the whole song were floating somewhere in heaven."
+
 - title: "Si Antes Te Hubiera Conocido"
   artist: "KAROL G"
   date: 2024-06-20
   cover: "/assets/images/album-covers/si.jpg"
   note: "Karol G makes a song about romantic regret sound like the happiest merengue at the party."
+
+- title: "Good Luck, Babe!"
+  artist: "Chappell Roan"
+  date: 2024-04-05
+  cover: "/assets/images/album-covers/glb.jpg"
+  note: "A soaring pop anthem about queer longing, denial, and the heartbreak of loving someone who's afraid to love you back."
