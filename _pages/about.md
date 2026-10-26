@@ -9,3 +9,4 @@ section_label: "ABOUT"
 - [Yuxuan Wang](https://yxwang1215.github.io/), a senior at Xidian University, majoring in **Software Engineering**, and an incoming PhD student at Peking University’s School of Computer Science.
 - [Leopold Wuhan Zhou](https://leopoldwuhanzhou.github.io/), a senior at Peking University, majoring in **Electronic Information Science** and **Mathematics**.
 - [Aurora Liu](https://liuwxy-aurora.github.io/), an incoming PhD student at the University of California, Los Angeles (UCLA).
+- [Yutong Liang](https://lyt0112.com/), an M.S. student at University of California, San Diego (UCSD), working on robot learning and dexterous manipulation.
